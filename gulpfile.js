@@ -3,84 +3,34 @@
  * @author Bongwon Suh<suhliebe@gmail.com>
  */
 
-var gulp = require("gulp");
-var browserify = require("browserify");
-var source = require("vinyl-source-stream");
-var tsify = require("tsify");
-var uglify = require("gulp-uglify");
-var sourcemaps = require("gulp-sourcemaps");
-var buffer = require("vinyl-buffer");
+const path = require('path');
+const gulp = require("gulp");
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
 
-var paths = {
-    pages: ["src/*.html"],
-};
 
-// var watchedBrowserify = watchify(
-//     browserify({
-//         basedir: ".",
-//         debug: true,
-//         entries: ["src/main.ts"],
-//         cache: {},
-//         packageCache: {},
-//     }).plugin(tsify)
-// );
+const projectDir = __dirname;
+const serverDir = path.join(projectDir, 'src', 'server');
+const clientDir = path.join(projectDir, 'src', 'client');
 
-gulp.task("copy-html", () => {
-    return gulp.src(paths.pages).pipe(gulp.dest("dist"));
-});
 
-// function bundle() {
-//     return watchedBrowserify
-//         .bundle()
-//         .on("error", fancy_log)
-//         .pipe(source("bundle.js"))
-//         .pipe(gulp.dest("dist"));
-// }
-// gulp.task("default", gulp.series(gulp.parallel("copy-html"), bundle));
-// watchedBrowserify.on("update", bundle);
-// watchedBrowserify.on("log", fancy_log);
+function sassWatch() {
+    return gulp.watch(['src/client/sass/**/*.sass'], ()=>{
+        const sass_files = path.join(clientDir, "sass", "**/*.sass")
+        const dest = path.join(projectDir, "static", "css")
 
-// gulp.task(
-//     "default",
-//     gulp.series(gulp.parallel("copy-html"), ()=>{
-//         return browserify({
-//             basedir: ".",
-//             debug: true,
-//             entries: ["src/main.ts"],
-//             cache: {},
-//             packageCache: {},
-//         })
-//             .plugin(tsify)
-//             .bundle()
-//             .pipe(source("bundle.js"))
-//             .pipe(buffer())
-//             .pipe(sourcemaps.init({ loadMaps: true }))
-//             .pipe(uglify())
-//             .pipe(sourcemaps.write("./"))
-//             .pipe(gulp.dest("dist"));
-//     })
-// );
-
-gulp.task(
-    "default",
-    gulp.series(gulp.parallel("copy-html"), ()=>{
-        return browserify({
-            basedir: ".",
-            debug: true,
-            entries: ["src/main.ts"],
-            cache: {},
-            packageCache: {},
-        })
-            .plugin(tsify)
-            .transform("babelify", {
-                presets: ["es2015"],
-                extensions: [".ts"],
-            })
-            .bundle()
-            .pipe(source("bundle.js"))
-            .pipe(buffer())
-            .pipe(sourcemaps.init({ loadMaps: true }))
-            .pipe(sourcemaps.write("./"))
-            .pipe(gulp.dest("dist"));
+        return gulp.src([sass_files])
+            .pipe(sourcemaps.init())
+            .pipe(sass())
+            .on('error', sass.logError)
+            .pipe(concat('all.css'))
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest(dest));
     })
-);
+        .on('change', (path)=>{
+            console.log(path);
+        });
+}
+
+exports.sassWatch = gulp.series(sassWatch);
