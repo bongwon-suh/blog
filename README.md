@@ -19,6 +19,10 @@
 
 nodejs기반 task runner, build tool
 
+gulp-sourcemaps 이름 그대로
+
+gulp-concat 파일을 병합? 해주는 역할
+
 
 
 ###### nunjucks
