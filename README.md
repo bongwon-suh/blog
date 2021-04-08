@@ -28,3 +28,14 @@ gulp-concat 파일을 병합? 해주는 역할
 ###### nunjucks
 
 node에서 사용하는 템플릿 엔진, 파이썬의 jinja와 매우 유사하다
+
+
+
+###### sass
+
+css preprocessor 전처리기
+
+중괄호와 세미콜론을 안쓰고 인덴트로 구분
+
+
+
