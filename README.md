@@ -2,7 +2,7 @@
 
 
 
-######	주석
+###	주석
 
 문서주석 문서화 도구 doxygen, javadoc 등등 이용과 협업을 위해서 꼬오오옥 작성해나가자.
 
@@ -15,7 +15,7 @@
 
 
 
-###### gulp
+### gulp
 
 nodejs기반 task runner, build tool
 
@@ -27,13 +27,13 @@ gulp-concat 파일을 병합? 해주는 역할
 
 
 
-###### nunjucks
+### nunjucks
 
 node에서 사용하는 템플릿 엔진, 파이썬의 jinja와 매우 유사하다
 
 
 
-###### sass css
+### sass css
 
 css preprocessor 전처리기
 
@@ -45,9 +45,11 @@ css 초기화는 꼭 해줘야함 -> 브라우저마다 보이는것들이 달�
 
 [CSS Tools: Reset CSS (meyerweb.com)](https://meyerweb.com/eric/tools/css/reset/) 그냥 그져다 써야겠다.
 
+가독성을 위해 인덴트는 3번이상 안들어가는 것이 좋다.
 
 
-###### css 방법론
+
+### css 방법론
 
 재사용성, 유지보수, 확장, 클래스로 예측 가능하게 만들어야한다.
 
@@ -67,7 +69,9 @@ SMACSS
 
 
 
+### Router
 
+이건 뭐 그냥 딱히 말할게 없는듯 하다..
 
 
 
