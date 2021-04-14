@@ -4,18 +4,13 @@
  */
 
 import { Router } from 'express';
+import * as control from './control'
+import * as views from './views'
 
 const router = Router();
 
-router.get('/auth/login', (req, res)=>{
-    return res.render('auth/login.njk');
-});
+router.get('/auth/signup', views.getSignup);
 
-router.get('/auth/signup', (req, res)=>{
-    return res.render('auth/signup.njk');
-});
-router.post('/auth/signup', (req, res)=>{
-    console.log(req.body);
-});
+router.post('/auth/signup', control.signup)
 
 export default router;
