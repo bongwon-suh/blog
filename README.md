@@ -27,6 +27,14 @@ gulp-concat 파일을 병합? 해주는 역할
 
 glob 특정 패턴 파일 목록을 조회할때 사용
 
+browserify 번들로
+
+tsify 타입스크립트 번들 모듈
+
+babel js컴파일러
+
+
+
 
 
 ### nunjucks
