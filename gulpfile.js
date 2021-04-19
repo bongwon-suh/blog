@@ -57,7 +57,7 @@ function clientWatch() {
     bro.plugin(tsify, { "target": 'es6'});
     bro.transform(babelify, {
         "presets": [
-            ["@babel/preset-env", {targets: clientConfig.targets}]
+            ["@babel/preset-env", { targets: { chrome: "55" }}]
         ],
         "extensions": ['.js', '.ts'],
         "global": true
