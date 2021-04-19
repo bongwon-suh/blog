@@ -17,11 +17,15 @@ njk.configure(path.join(common.projectDir, 'static', 'template'), {
     "express": app
 }).addGlobal('static', "/static");
 
+app.use('/static/css', express.static(path.join(common.projectDir, 'static', 'css')));
+app.use('/static/js', express.static(path.join(common.projectDir, 'static', 'js')));
+app.use('/static/assets', express.static(path.join(common.projectDir, 'static', 'assets')));
+
 // router
 app.use(router);
 
-app.get('/', (req, res) => {
-    res.render('index.njk');
+app.get('/*', (req, res) => {
+    res.render('index.njk')
 })
 
 app.listen(3000, ()=>{
