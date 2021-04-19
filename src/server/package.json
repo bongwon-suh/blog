@@ -13,6 +13,7 @@
     "nunjucks": "^3.2.3"
   },
   "devDependencies": {
+    "@types/express": "^4.17.11",
     "@types/nunjucks": "^3.1.4",
     "mariadb": "^2.5.3"
   }
