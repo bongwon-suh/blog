@@ -8,12 +8,23 @@ const gulp = require("gulp");
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
-
+const browserify = require('browserify');
+const glob = require('glob');
+const Watchify = require('watchify');
+const tsify = require('tsify');
+const babelify = require('babelify');
+const vinyl = require('vinyl-source-stream');
 
 const projectDir = __dirname;
 const serverDir = path.join(projectDir, 'src', 'server');
 const clientDir = path.join(projectDir, 'src', 'client');
 
+const clientConfig = {
+    "baseDir": clientDir,
+    "files": glob.sync(path.join(clientDir, "ts/**/*.ts")),
+    "targets": {},
+    "static_js": path.join(projectDir, "static", "js"),
+}
 
 function sassWatch() {
     return gulp.watch(['src/client/sass/**/*.sass'], ()=>{
@@ -33,4 +44,35 @@ function sassWatch() {
         });
 }
 
+function clientWatch() {
+    const option = {
+        "baseDir": clientConfig.baseDir,
+        "paths": [path.join(clientConfig.baseDir)],
+        "debug": true,
+        "entries": []
+    }
+    const bro = browserify(clientConfig.files, option)
+
+    bro.plugin(Watchify, { "delay": 100, "ignoreWatch": ['**/node_modules/**']});
+    bro.plugin(tsify, { "target": 'es6'});
+    bro.transform(babelify, {
+        "presets": [
+            ["@babel/preset-env", {targets: clientConfig.targets}]
+        ],
+        "extensions": ['.js', '.ts'],
+        "global": true
+    });
+    bro.on('update', clientWatchBuild);
+    
+    function clientWatchBuild() {
+        return bro
+            .bundle()
+            .on('error', (err)=>{console.log(err)})
+            .pipe(vinyl('all.js'))
+            .pipe(gulp.dest(clientConfig.static_js))
+    }
+    return clientWatchBuild();
+}
+
 exports.sassWatch = gulp.series(sassWatch);
+exports.clientWatch = gulp.parallel(clientWatch, sassWatch);
