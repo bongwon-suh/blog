@@ -63,6 +63,7 @@ function clientWatch() {
         "global": true
     });
     bro.on('update', clientWatchBuild);
+    bro.on('log', ()=>{console.log("update")});
     
     function clientWatchBuild() {
         return bro
