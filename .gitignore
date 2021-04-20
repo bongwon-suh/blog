@@ -2,3 +2,4 @@ node_modules
 dist
 all.css
 all.js
+SECRET.json
