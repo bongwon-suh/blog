@@ -1,24 +1,14 @@
+import { html, render, TemplateResult } from 'lit-html';
 import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
 
 export default class Dashboard extends AbstractView {
-    constructor() {
-        super();
+    constructor(container: HTMLElement) {
+        super(container);
         this.setTitle("Dashboard");
-        const msg = {
-            "url": '/auth/test',
-            "data": {
-                "id": '123'
-            }
-        }
-        utils.sendAPI('post', msg)
-        .then( (result)=>{
-            console.log(result);
-        })
     }
-    async getHTML() {
-        return `
-            <h1>dashboard</h1>
-        `;
+
+    renderHTML = ()=>{
+        return render(html `<div>hello dashboard</div>`, this.container)
     }
 }

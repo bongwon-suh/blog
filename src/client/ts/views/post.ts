@@ -1,13 +1,14 @@
+import { html, render, TemplateResult } from 'lit-html';
 import  AbstractView from './AbstractView';
+import * as utils from '../lib/utils';
 
 export default class Post extends AbstractView {
-    constructor() {
-        super();
+    constructor(container: HTMLElement) {
+        super(container);
         this.setTitle("Post");
     }
-    async getHTML() {
-        return `
-            <h1>Post</h1>
-        `;
+
+    renderHTML = ()=>{
+        return render(html `<div>hello Post</div>`, this.container)
     }
 }

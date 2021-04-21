@@ -4,8 +4,8 @@
  */
 
 import Dashboard from './views/dashboard';
-import Setting from './views/setting';
 import Post from './views/post';
+import Setting from './views/setting';
 
 const navigateTo = (url: string) => {
     history.pushState(null, "", url);
@@ -35,9 +35,9 @@ const router = async () => {
         };
     }
 
-    const view = new match.route.view();
     const container = document.getElementById("container") as HTMLElement
-    container.innerHTML = await view.getHTML();
+    const view = new match.route.view(container);
+    view.renderHTML();
 };
 
 window.addEventListener("popstate", router);
