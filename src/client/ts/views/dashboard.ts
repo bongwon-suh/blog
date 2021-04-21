@@ -12,7 +12,9 @@ export default class Dashboard extends AbstractView {
             }
         }
         utils.sendAPI('post', msg)
-        console.log(utils.sendAPI('post', msg))
+        .then( (result)=>{
+            console.log(result);
+        })
     }
     async getHTML() {
         return `

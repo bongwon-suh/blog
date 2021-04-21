@@ -18,6 +18,8 @@ router.post('/auth/test', json(), (req: Request, res: Response)=>{
     const msg = {
         "result": 'good'
     }
-    return res.json(msg)
+    res.json(msg)
+    
+    return msg
 })
 export default router;
