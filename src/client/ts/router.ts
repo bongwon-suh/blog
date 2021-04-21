@@ -38,8 +38,6 @@ const router = async () => {
     const view = new match.route.view();
     const container = document.getElementById("container") as HTMLElement
     container.innerHTML = await view.getHTML();
-
-    console.log(potentialMatches);
 };
 
 window.addEventListener("popstate", router);
