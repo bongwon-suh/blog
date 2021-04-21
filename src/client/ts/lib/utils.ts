@@ -2,9 +2,10 @@ interface APIObject {
     "url": string
     "data": {}
 }
-export async function sendAPI(method: string, apiobj: APIObject) {
+export async function sendAPI(method: string, obj: APIObject) {
     try {
-        return await makeRequest(method, apiobj.url, apiobj.data);
+        const result = await makeRequest(method, obj.url, obj.data);
+        return JSON.parse(result);
     }
     catch (err) {
         console.log(err)
