@@ -8,8 +8,16 @@ export default class {
     setTitle(title: string) {
         document.title = title;
     }
+    
+    public run = () => {
+        this.renderHTML();
+    }
+
+    public makeTemplate = ()=>{
+        return html`<h1>make Template</h1>`
+    }
 
     public renderHTML = ()=>{
-        return render(html `<div>hello world123</div>`, this.container)
+        return render(this.makeTemplate(), this.container)
     }
 }
