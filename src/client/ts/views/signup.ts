@@ -18,7 +18,7 @@ export default class Signup extends AbstractView {
                         <h2 class="signup_title">Sign Up</h2>
                         <form class="signup-form">
                             <div class="signup-form-field">
-                                <input type="text" class="signup-form-field__input" placeholder="Full Name" required />
+                                <input type="text" class="signup-form-field__input" placeholder="ID" required />
                             </div>
                             <div class="signup-form-field">
                                 <input type="password" class="signup-form-field__input" placeholder="Password" required />
