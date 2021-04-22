@@ -6,6 +6,7 @@
 import Dashboard from './views/dashboard';
 import Post from './views/post';
 import Setting from './views/setting';
+import Signup from './views/signup';
 
 const navigateTo = (url: string) => {
     history.pushState(null, "", url);
@@ -17,6 +18,7 @@ const router = async () => {
         { path: "/", view: Dashboard },
         { path: "/posts", view: Post },
         { path: "/settings", view: Setting },
+        { path: "/signup", view: Signup },
     ];
 
     // test each route for potential match
@@ -37,7 +39,7 @@ const router = async () => {
 
     const container = document.getElementById("container") as HTMLElement
     const view = new match.route.view(container);
-    view.renderHTML();
+    view.run();
 };
 
 window.addEventListener("popstate", router);
