@@ -15,8 +15,10 @@ async function asyncFunction(query: string) {
     let conn;
     try {
       conn = await pool.getConnection();
+      await conn.beginTransaction();
       const rows = await conn.query(query);
-      console.log(rows);
+      console.log(rows)
+      return rows;
   
     } catch (err) {
       throw err;
