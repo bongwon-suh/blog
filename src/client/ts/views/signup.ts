@@ -28,10 +28,11 @@ export default class Signup extends AbstractView {
 
         utils.sendAPI('POST', msg)
         .then( (result)=>{
+            console.log(result);
             if (result.fail) {
-                return window.alert(result.msg)
+                return window.alert(result.msg);
             } else {
-                window.alert("회원가입을 완료했습니다.");
+                window.alert(result.msg);
                 window.location.replace('/');
             }
         })

@@ -1,8 +1,14 @@
 import { Request, Response } from 'express'
 import asyncFunction from '../../lib/db'
 
+interface ControlResult{
+    "fail": boolean;
+    "msg"?: string;
+    "data"?: any;
+}
+
 export const postSignup = function (req: Request, res: Response) {
-    const response_msg = {
+    const response_msg: ControlResult = {
         "fail": false,
         "msg": ''
     };
@@ -11,16 +17,19 @@ export const postSignup = function (req: Request, res: Response) {
     const password = req.body['password'];
     const confirm_password = req.body['confirm_password'];
 
-    console.log()
-
-    const query = `INSERT INTO user (user_id, user_pwd) VALUES ('${user_id}', ${password})`
+    const query = `INSERT INTO user (user_id, user_pwd) VALUES (${user_id}, ${password})`
     asyncFunction(query)
-    .then( (result)=>{
-        console.log(result);
-    })
-    .catch((err)=>{
-        console.log(err);
+    .then( (result: any)=>{
+        if (result.status === 'success') {
+            response_msg.msg = '계정을 생성하였습니다.';
+            response_msg.data = result.data;
+            res.json(response_msg);
+        } else {
+            response_msg.fail = true;
+            response_msg.msg = '계정 생성에 실패했습니다.';
+            res.json(response_msg);
+        }
     })
 
-    return res.json(response_msg)
+    return response_msg
 }
