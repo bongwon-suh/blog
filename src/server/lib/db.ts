@@ -14,7 +14,7 @@ const pool = mariadb.createPool({
 async function asyncFunction(query: string) {
     let conn;
     let result = {
-      "status": "fail",
+      "status": false,
       "data": {}
     };
 
@@ -22,7 +22,7 @@ async function asyncFunction(query: string) {
       conn = await pool.getConnection();
       await conn.beginTransaction();
       result.data = await conn.query(query);
-      result.status = "success"
+      result.status = true;
   
     } catch (err) {
       result.data = err;

@@ -20,7 +20,7 @@ export const postSignup = function (req: Request, res: Response) {
     const query = `INSERT INTO user (user_id, user_pwd) VALUES (${user_id}, ${password})`
     asyncFunction(query)
     .then( (result: any)=>{
-        if (result.status === 'success') {
+        if (result.status) {
             response_msg.msg = '계정을 생성하였습니다.';
             response_msg.data = result.data;
             res.json(response_msg);
