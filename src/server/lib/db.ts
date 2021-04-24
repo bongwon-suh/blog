@@ -20,7 +20,6 @@ async function asyncFunction(query: string) {
 
     try {
       conn = await pool.getConnection();
-      await conn.beginTransaction();
       result.data = await conn.query(query);
       result.status = true;
   
