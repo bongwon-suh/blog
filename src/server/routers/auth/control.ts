@@ -1,5 +1,6 @@
-import { Request, Response } from 'express'
-import asyncFunction from '../../lib/db'
+import { Request, Response } from 'express';
+import asyncFunction from '../../lib/db';
+import { generatePassword } from '../../lib/auth';
 
 interface ControlResult{
     "fail": boolean;
@@ -14,8 +15,10 @@ export const postSignup = function (req: Request, res: Response) {
     };
 
     const user_id = req.body['user_id'];
-    const password = req.body['password'];
-    const confirm_password = req.body['confirm_password'];
+    const password = generatePassword(req.body['password']);
+    console.log(password);
+    const confirm_password = generatePassword(req.body['confirm_password']);
+    console.log(confirm_password);
 
     if (password != confirm_password) {
         response_msg.fail = true;
@@ -32,7 +35,7 @@ export const postSignup = function (req: Request, res: Response) {
             res.json(response_msg);
 
         } else {
-            const query = `INSERT INTO user (user_id, user_pwd) VALUES ('${user_id}', ${password})`;
+            const query = `INSERT INTO user (user_id, user_pwd) VALUES ('${user_id}', '${password}')`;
 
             asyncFunction(query)
             .then( (result: any)=>{
