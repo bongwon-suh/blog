@@ -28,7 +28,6 @@ export default class Signup extends AbstractView {
 
         utils.sendAPI('POST', msg)
         .then( (result)=>{
-            console.log(result);
             if (result.fail) {
                 return window.alert(result.msg);
             } else {
