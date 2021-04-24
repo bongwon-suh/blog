@@ -29,6 +29,7 @@ async function asyncFunction(query: string) {
     } finally {
       if (conn) {
         conn.end();
+        console.log(result);
         return result;
       } 
 
