@@ -5,7 +5,7 @@ import * as utils from '../lib/utils';
 export default class Signup extends AbstractView {
     constructor(container: HTMLElement) {
         super(container);
-        this.setTitle("Post");
+        this.setTitle("Signup");
     }
 
     public submitSignUp = (e: Event)=>{
@@ -47,16 +47,16 @@ export default class Signup extends AbstractView {
                         <h2 class="signup_title">Sign Up</h2>
                         <form class="signup-form">
                             <div class="signup-form-field">
-                                <input id="user_id" type="text" class="signup-form-field__input" placeholder="ID" required />
+                                <input id="user_id" name="user_id" type="text" class="signup-form-field__input" placeholder="ID" required />
                             </div>
                             <div class="signup-form-field">
-                                <input id="password" type="password" class="signup-form-field__input" placeholder="Password" required />
+                                <input id="password" name="user_pwd" type="password" class="signup-form-field__input" placeholder="Password" required />
                             </div>
                             <div class="signup-form-field">
                                 <input id="confirm_password" type="password" class="signup-form-field__input" placeholder="Confirm Password" required />
                             </div>
                             <div class="signup-form-field">
-                                <input id="signup" class="signup-form-field__button" type="submit" value="Sign up" @click=${this.submitSignUp}>
+                                <div id="signup" class="signup-form-field__button" @click=${this.submitSignUp}>Sign up</div>
                             </div>
                         </form>
                     </div>

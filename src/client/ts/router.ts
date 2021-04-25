@@ -7,6 +7,7 @@ import Dashboard from './views/dashboard';
 import Post from './views/post';
 import Setting from './views/setting';
 import Signup from './views/signup';
+import Login from './views/login';
 
 const navigateTo = (url: string) => {
     history.pushState(null, "", url);
@@ -19,6 +20,7 @@ const router = async () => {
         { path: "/posts", view: Post },
         { path: "/settings", view: Setting },
         { path: "/signup", view: Signup },
+        { path: "/login", view: Login },
     ];
 
     // test each route for potential match
