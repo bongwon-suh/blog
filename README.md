@@ -85,5 +85,5 @@ SMACSS
 
 
 ### nodejs
-passport 
+passport 로그인 인증 라이브러리 전략에 의해 관리
 crypto 암호화 모듈
