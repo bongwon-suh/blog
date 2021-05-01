@@ -22,7 +22,6 @@ async function asyncFunction(query: string) {
       conn = await pool.getConnection();
       result.data = await conn.query(query);
       result.status = true;
-  
     } catch (err) {
       result.data = err;
       throw err;
@@ -32,7 +31,6 @@ async function asyncFunction(query: string) {
         // console.log(result);
         return result;
       } 
-
     }
   }
 
