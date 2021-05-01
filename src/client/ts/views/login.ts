@@ -37,7 +37,7 @@ export default class Login extends AbstractView {
     }
 
     makeTemplate = ()=>{
-        return html `
+        return html`
                     <div class="login">
                         <h2 class="login_title">Login</h2>
                         <form class="login-form">
