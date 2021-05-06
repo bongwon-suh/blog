@@ -46,7 +46,7 @@ function sassWatch() {
 
 function clientWatch() {
     const option = {
-        "baseDir": clientConfig.baseDir,
+        "basedir": clientConfig.baseDir,
         "paths": [path.join(clientConfig.baseDir)],
         "debug": true,
         "entries": []
@@ -63,7 +63,7 @@ function clientWatch() {
         "global": true
     });
     bro.on('update', clientWatchBuild);
-    bro.on('log', ()=>{console.log("update")});
+    bro.on('log', ()=>{console.log("=========update=======")});
     
     function clientWatchBuild() {
         return bro
