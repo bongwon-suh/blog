@@ -9,6 +9,7 @@
   "author": "bongwon suh",
   "license": "ISC",
   "dependencies": {
+    "lit": "^2.0.0-rc.1",
     "lit-html": "^1.3.0"
   }
 }
