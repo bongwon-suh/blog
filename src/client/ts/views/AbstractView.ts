@@ -1,23 +1,27 @@
-import { html, render, TemplateResult } from 'lit-html';
+/**
+ * @file AbstractView Class
+ * @author Bongwon Suh<suhliebe@gmail.com>
+ */
 
-export default class {
-    container: HTMLElement
-    constructor(container: HTMLElement) {
-        this.container = container;
+import { LitElement, css, html } from 'lit';
+import { customElement } from 'lit/decorators';
+
+customElement('my-page')
+export default class extends LitElement {
+    constructor() {
+        super();
     }
-    setTitle(title: string) {
+
+    /**
+     * setTitle
+     */
+    public setTitle(title: string) {
         document.title = title;
     }
+
+    static styles = css``;
     
-    public run = () => {
-        this.renderHTML();
-    }
-
-    public makeTemplate = ()=>{
-        return html`<h1>make Template</h1>`
-    }
-
-    public renderHTML = ()=>{
-        return render(this.makeTemplate(), this.container)
+    render() {
+        return html`<p>hello worold</p>`
     }
 }
