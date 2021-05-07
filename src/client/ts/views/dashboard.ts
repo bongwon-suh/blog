@@ -1,3 +1,9 @@
+/**
+ * @file Dashboard
+ * @todo will be change
+ * @author Bongwon Suh<suhliebe@gmail.com>
+ */
+
 import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
@@ -9,6 +15,10 @@ export default class Dashboard extends AbstractView {
         super();
         this.setTitle("Dashboard");
     }
+
+    /**
+     * make Stylesheet
+     */
     static styles = css`
         :host {
             color: green;
@@ -18,6 +28,9 @@ export default class Dashboard extends AbstractView {
     @property()
     name?: string = 'world';
 
+    /**
+     * make Template
+     */
     render() {
         return html`
         <p>hello, ${this.name}</p>

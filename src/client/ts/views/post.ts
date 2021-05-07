@@ -1,24 +1,37 @@
-import { html, render, TemplateResult } from 'lit-html';
+/**
+ * @file Post
+ * @todo will be change
+ * @author Bongwon Suh<suhliebe@gmail.com>
+ */
+
+import { css, html } from 'lit';
+import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
 
+@customElement('post-container')
 export default class Post extends AbstractView {
-    constructor(container: HTMLElement) {
-        super(container);
+    constructor() {
+        super();
         this.setTitle("Post");
-
-        const msg = {
-            "url": '/auth/test',
-            "data": {}
-        };
-
-        utils.sendAPI('POST', msg)
-        .then( (result)=>{
-            console.log(result);
-        })
     }
 
-    renderHTML = ()=>{
-        return render(html `<div>hello Post</div>`, this.container)
+    /**
+     * make Stylesheet
+     */
+    static styles = css`
+        :host {
+            color: green;
+        }
+    `;
+    
+    @property()
+    name?: string = 'world';
+
+    /**
+     * make Template
+     */
+    render() {
+        return html`<p>hello, ${this.name}</p>`
     }
 }
