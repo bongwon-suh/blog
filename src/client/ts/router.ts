@@ -12,17 +12,8 @@ window.addEventListener("load", ()=>{
 function initRouter() {
     const router = new Router(document.querySelector("main"));
     router.setRoutes([
-        {
-            path: "/",
-            component: "lit-dashboard"
-        },
-        {
-            path: "/settings",
-            component: "lit-setting"
-        },
-        {
-            path: "/login",
-            component: "login-page"
-        }
+        { path: "/", component: "lit-dashboard" },
+        { path: "/settings", component: "lit-setting" },
+        { path: "/login", component: "auth-login" }
     ])
 }

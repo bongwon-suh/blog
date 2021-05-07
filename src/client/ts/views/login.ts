@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
 
-@customElement('login-page')
+@customElement('auth-login')
 export default class Login extends AbstractView {
     constructor() {
         super();
