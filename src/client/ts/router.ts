@@ -3,56 +3,22 @@
  * @author Bongwon Suh<suhliebe@gmail.com>
  */
 
-import Dashboard from './views/dashboard';
-import Post from './views/post';
-import Setting from './views/setting';
-import Signup from './views/signup';
-import Login from './views/login';
+import { Router } from '@vaadin/router';
 
-const navigateTo = (url: string) => {
-    history.pushState(null, "", url);
-    router();
-};
+window.addEventListener("load", ()=>{
+    initRouter();
+})
 
-const router = async () => {
-    const routes = [
-        { path: "/", view: Dashboard },
-        { path: "/posts", view: Post },
-        { path: "/settings", view: Setting },
-        { path: "/signup", view: Signup },
-        { path: "/login", view: Login },
-    ];
-
-    // test each route for potential match
-    const potentialMatches = routes.map(route => {
-        return {
-            route: route,
-            isMatch: location.pathname === route.path
-        };
-    });
-
-    let match = potentialMatches.find(potentialMatche => potentialMatche.isMatch);
-    if (!match) {
-        match = {
-            route: routes[0],
-            isMatch: true
-        };
-    }
-
-    const container = document.getElementById("container") as HTMLElement
-    const view = new match.route.view(container);
-    view.run();
-};
-
-window.addEventListener("popstate", router);
-
-document.addEventListener("DOMContentLoaded", ()=>{
-    document.body.addEventListener("click", (e: Event)=>{
-        const target = e.target as HTMLAnchorElement
-        if (target.matches("[data-link]")){
-            e.preventDefault();
-            navigateTo(target.href);
+function initRouter() {
+    const router = new Router(document.querySelector("main"));
+    router.setRoutes([
+        {
+            path: "/",
+            component: "lit-dashboard"
+        },
+        {
+            path: "/settings",
+            component: "lit-setting"
         }
-    })
-    router();
-});
+    ])
+}
