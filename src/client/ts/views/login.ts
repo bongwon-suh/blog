@@ -1,14 +1,16 @@
-import { html, render, TemplateResult } from 'lit-html';
+import { css, html } from 'lit';
+import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
 
+@customElement('login-page')
 export default class Login extends AbstractView {
-    constructor(container: HTMLElement) {
-        super(container);
+    constructor() {
+        super();
         this.setTitle("Login");
     }
 
-    public submitLogin = (e: Event)=>{
+    protected submitLogin = (e: Event)=>{
         const user_id = document.getElementById('user_id') as HTMLInputElement;
         const password = document.getElementById('password') as HTMLInputElement;
 
@@ -32,11 +34,13 @@ export default class Login extends AbstractView {
         })
     }
 
-    renderHTML = ()=>{
-        return render(this.makeTemplate(), this.container);
-    }
+    static styles = css`
+        :host {
+            color: green;
+        }
+    `;
 
-    makeTemplate = ()=>{
+    render() {
         return html`
                     <div class="login">
                         <h2 class="login_title">Login</h2>

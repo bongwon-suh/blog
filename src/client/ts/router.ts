@@ -19,6 +19,10 @@ function initRouter() {
         {
             path: "/settings",
             component: "lit-setting"
+        },
+        {
+            path: "/login",
+            component: "login-page"
         }
     ])
 }
