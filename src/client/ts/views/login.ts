@@ -10,6 +10,11 @@ export default class Login extends AbstractView {
         this.setTitle("Login");
     }
 
+    /**
+     * Protected Metod
+     * @param e MouseEvent
+     */
+
     protected submitLogin = (e: Event)=>{
         const user_id = document.getElementById('user_id') as HTMLInputElement;
         const password = document.getElementById('password') as HTMLInputElement;
@@ -34,12 +39,19 @@ export default class Login extends AbstractView {
         })
     }
 
+    /**
+     * make Stylesheet
+     */
+
     static styles = css`
         :host {
             color: green;
         }
     `;
-
+    
+    /* 
+    * make Template
+    */
     render() {
         return html`
                     <div class="login">
