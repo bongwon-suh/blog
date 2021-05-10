@@ -4,7 +4,7 @@ import asyncFunction from '../../lib/db';
 import { generatePassword, checkUser } from '../../lib/auth';
 // import { ControlFunction, ControlResult } from "lib/interface";
 import LocalStrategy from 'passport-local';
-import { User } from '../../entity/User';
+import { User } from '../../models/User';
 import { createConnection } from 'typeorm';
 import { getConnection, getRepository } from 'typeorm';
 
