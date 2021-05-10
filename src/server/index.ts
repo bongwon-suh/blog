@@ -20,7 +20,18 @@ import { Router, json } from 'express';
 import common from './lib/common';
 import auth from './lib/auth';
 import router from './routers/router';
-import asyncFunction from './lib/db'
+// import asyncFunction from './lib/db';
+import "reflect-metadata";
+import { createConnection } from 'typeorm';
+
+// db initailize
+createConnection()
+    .then(()=>{
+        console.log('database connected');
+    })
+    .catch((err)=>{
+        console.log(err);
+    });
 
 const app = express();
 

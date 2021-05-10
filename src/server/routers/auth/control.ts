@@ -4,6 +4,9 @@ import asyncFunction from '../../lib/db';
 import { generatePassword, checkUser } from '../../lib/auth';
 // import { ControlFunction, ControlResult } from "lib/interface";
 import LocalStrategy from 'passport-local';
+import { User } from '../../entity/User';
+import { createConnection } from 'typeorm';
+import { getConnection, getRepository } from 'typeorm';
 
 export const postSignup = function (req: Request, res: Response) {
     const response_msg = {
@@ -97,6 +100,7 @@ export const postLogin = function(req: Request, res: Response) {
     return response_msg;
 }
 
-export const test = function (req: Request, res: Response) {
-    console.log(req.user);
+export const test = async function (req: Request, res: Response) {
+    const username = await User.findOne({user_id: "spwsbw"})
+    console.log(username)
 }
