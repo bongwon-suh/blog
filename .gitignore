@@ -3,3 +3,5 @@ dist
 all.css
 all.js
 SECRET.json
+ormconfig.json
+ormconfig.js
