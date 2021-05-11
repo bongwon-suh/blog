@@ -2,25 +2,15 @@
  * @file run server
  * @author Bongwon Suh<suhliebe@gmail.com>
  */
-
-interface User{
-    "id": number // exactly, unsigned int. database internal primary key.
-    "user_id": string // username. it is used to login by user.
-    "user_pwd": string // encrpyted password.
-    "registter_time": Date
-};
-
 import path from 'path';
 import express, { query } from 'express';
 import * as njk from 'nunjucks';
 import session from 'express-session';
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
-import { Router, json } from 'express';
 import common from './lib/common';
-import auth from './lib/auth';
 import router from './routers/router';
-// import asyncFunction from './lib/db';
+import { User } from './models/User';
 import "reflect-metadata";
 import { createConnection } from 'typeorm';
 
@@ -49,9 +39,9 @@ const passport_options: LocalStrategy.IStrategyOptions = {
 app.use(passport.initialize());
 app.use(passport.session());
 
-const local_strategy = new LocalStrategy.Strategy(passport_options,(user_id, password, cb)=>{
+const local_strategy = new LocalStrategy.Strategy(passport_options, async (user_id, password, cb)=>{
     console.log(user_id, password)
-    auth.checkUser(user_id, password)
+    await User.findOne({user_id: user_id})
     .then((user)=>{
         console.log(user)
         return cb(null, user)
