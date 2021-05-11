@@ -8,50 +8,27 @@ import { User } from '../../models/User';
 import { createConnection } from 'typeorm';
 import { getConnection, getRepository } from 'typeorm';
 
-export const postSignup = function (req: Request, res: Response) {
-    const response_msg = {
-        "fail": true,
-        "msg": '',
-        "data": {}
-    }
+export const signup = async function (req: Request, res: Response) {
 
     const user_id = req.body['user_id'];
     const password = generatePassword(req.body['password']);
     const confirm_password = generatePassword(req.body['confirm_password']);
 
     if (password != confirm_password) {
-        response_msg.fail = true;
-        response_msg.msg = "비밀번호가 일치하지 않습니다."
-        return res.json(response_msg);
+        res.status(409).json('비밀번호가 일치하지 않습니다.');
     }
-
-    const query = `SELECT * FROM user WHERE user_id='${user_id}'`
-    asyncFunction(query)
-    .then( (result: any)=>{
-        if(result.data[0]) {
-            response_msg.fail = true;
-            response_msg.msg = "이미 존재하는 계정입니다.";
-            res.json(response_msg);
-
-        } else {
-            const query = `INSERT INTO user (user_id, password) VALUES ('${user_id}', '${password}')`;
-
-            asyncFunction(query)
-            .then( (result: any)=>{
-                if(result.status){
-                    response_msg.msg = '계정을 생성하였습니다.';
-                    response_msg.data = result.data;
-                    res.json(response_msg);
-                } else {
-                    response_msg.fail = true;
-                    response_msg.msg = '계정 생성에 실패했습니다.';
-                    res.json(response_msg);
-                }
-            })
-        }
-    });
-
-    return response_msg
+    
+    const isExistUser = await User.findOne({ user_id: user_id});
+    if(isExistUser) {
+        res.status(409).json('존재하는 계정입니다');
+    }
+    else {
+        const user = new User();
+        user.user_id = user_id;
+        user.password = password;
+        await user.save();
+        res.status(200).json('회원가입 완료')
+    }
 }
 
 export const postLogin = function(req: Request, res: Response) {
