@@ -21,8 +21,8 @@ export default class Login extends AbstractView {
      */
 
     protected submitLogin = (e: Event)=>{
-        const user_id = document.getElementById('user_id') as HTMLInputElement;
-        const password = document.getElementById('password') as HTMLInputElement;
+        const user_id = this.shadowRoot!.getElementById('user_id') as HTMLInputElement
+        const password = this.shadowRoot!.getElementById('password') as HTMLInputElement
 
         const msg = {
             "url": '/auth/login',
@@ -35,12 +35,15 @@ export default class Login extends AbstractView {
         utils.sendAPI('POST', msg)
         .then( (result)=>{
             console.log(result);
-            if (result.fail) {
-                return window.alert(result.msg);
+            if (result.status != 200) {
+                return window.alert(result.responseText);
             } else {
-                window.alert(result.msg);
+                window.alert(result.responseText);
                 window.location.replace('/');
             }
+        })
+        .catch((err)=>{
+            console.log(`catch문 ${err}`)
         })
     }
 
