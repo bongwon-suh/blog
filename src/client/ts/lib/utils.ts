@@ -2,6 +2,21 @@ interface APIObject {
     "url": string
     "data": {}
 }
+
+export function getUserInfo() {
+    const msg = {
+        "url": '/auth/user-info',
+        "data": {}
+    }
+    sendAPI('GET', msg)
+    .then( (result)=>{
+        console.log(result)
+    })
+    .catch( (err)=>{
+        console.log(err)
+    });
+}
+
 export async function sendAPI(method: string, obj: APIObject) {
     try {
         const result = await makeRequest(method, obj.url, obj.data);
