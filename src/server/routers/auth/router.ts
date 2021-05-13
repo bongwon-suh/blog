@@ -8,6 +8,8 @@ import * as control from './control'
 
 const router = Router();
 
+router.get('/auth/user-info', json(), control.getUser)
+
 router.post('/auth/signup', json(), control.signup);
 router.post('/auth/login', json(), control.login);
 

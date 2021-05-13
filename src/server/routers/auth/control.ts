@@ -49,6 +49,10 @@ export const login = async function(req: Request, res: Response) {
     }
 }
 
+export const getUser = async function (req: Request, res: Response) {
+    res.status(200).json(req.user)
+}
+
 export const test = async function (req: Request, res: Response) {
     console.log("=========로그인 테스트========")
     console.log(req.user)

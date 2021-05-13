@@ -14,6 +14,7 @@ export default class Dashboard extends AbstractView {
     constructor() {
         super();
         this.setTitle("Dashboard");
+        utils.getUserInfo();
     }
 
     /**
