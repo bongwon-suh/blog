@@ -5,11 +5,10 @@ interface APIObject {
 export async function sendAPI(method: string, obj: APIObject) {
     try {
         const result = await makeRequest(method, obj.url, obj.data);
-        console.log(result)
         return result;
     }
     catch (err) {
-        console.log(err);
+        throw err;
     }
 }
 
@@ -22,19 +21,11 @@ function makeRequest(method: string, url: string, data: {}): Promise<any> {
         xhr.send(JSON.stringify(data));
 
         xhr.onload = ()=>{
-            // if (xhr.status >= 200 && xhr.status < 300) {
-            //     resolve(xhr.response)
-            // } else {
-            //     reject({
-            //         "status": xhr.status,
-            //         "statusText": xhr.statusText
-            //     })
-            // }
-            resolve({
-                "status": xhr.status,
-                "statusText": xhr.statusText,
-                "responseText": xhr.responseText
-            })
-        }
+            console.log(xhr.responseText)
+            if (xhr.status >= 200 && xhr.status < 300)
+                resolve({"status": xhr.status, "statusText": xhr.statusText, "responseText": xhr.responseText})
+            else
+                reject({"status": xhr.status, "statusText": xhr.statusText, "responseText": xhr.responseText})
+        };
     })
 }
