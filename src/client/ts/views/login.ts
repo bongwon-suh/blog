@@ -34,7 +34,6 @@ export default class Login extends AbstractView {
 
         utils.sendAPI('POST', msg)
         .then( (result)=>{
-            console.log(result);
             if (result.status != 200) {
                 return window.alert(result.responseText);
             } else {
@@ -43,7 +42,7 @@ export default class Login extends AbstractView {
             }
         })
         .catch((err)=>{
-            console.log(`catch문 ${err}`)
+            window.alert(err.responseText);
         })
     }
 
