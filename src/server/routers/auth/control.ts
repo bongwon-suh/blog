@@ -45,7 +45,7 @@ export const login = async function(req: Request, res: Response) {
         }
     }
     else {
-        res.status(404).json('회원가입을 진행하세요.')
+        res.status(404).json('회원가입을 진행해주세요.')
     }
 }
 
