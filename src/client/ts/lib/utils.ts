@@ -3,20 +3,6 @@ interface APIObject {
     "data": {}
 }
 
-export function getUserInfo() {
-    const msg = {
-        "url": '/auth/user-info',
-        "data": {}
-    }
-    sendAPI('GET', msg)
-    .then( (result)=>{
-        console.log(result)
-    })
-    .catch( (err)=>{
-        console.log(err)
-    });
-}
-
 export async function sendAPI(method: string, obj: APIObject) {
     try {
         const result = await makeRequest(method, obj.url, obj.data);
@@ -36,7 +22,6 @@ function makeRequest(method: string, url: string, data: {}): Promise<any> {
         xhr.send(JSON.stringify(data));
 
         xhr.onload = ()=>{
-            console.log(xhr.responseText)
             if (xhr.status >= 200 && xhr.status < 300)
                 resolve({"status": xhr.status, "statusText": xhr.statusText, "responseText": xhr.responseText})
             else
