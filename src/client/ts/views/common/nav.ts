@@ -12,7 +12,7 @@ class MyHeader extends LitElement {
         super();
     }
 
-    protected getUserInfo2(): Promise<User> {
+    protected getUserInfo(): Promise<User> {
         return new Promise ((resolve, reject)=>{
             const msg = {
                 "url": '/auth/user-info',
@@ -51,7 +51,7 @@ class MyHeader extends LitElement {
     render() {
         return html`
                     ${until(
-                        this.getUserInfo2()
+                        this.getUserInfo()
                         .then((result)=>{
                             if(result.responseText) {
                                 return html`
