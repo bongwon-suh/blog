@@ -14,7 +14,7 @@ function initRouter() {
     router.setRoutes([
         { path: "/", component: "dashboard-container" },
         { path: "/settings", component: "setting-container" },
-        { path: "/post", component: "post-container "},
+        { path: "/post", component: "post-container"},
         { path: "/login", component: "auth-login" },
         { path: "/signup", component: "auth-signup" },
     ])
