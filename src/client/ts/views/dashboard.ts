@@ -8,13 +8,13 @@ import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
+import './common/nav';
 
 @customElement('dashboard-container')
 export default class Dashboard extends AbstractView {
     constructor() {
         super();
         this.setTitle("Dashboard");
-        utils.getUserInfo();
     }
 
     /**
@@ -34,7 +34,8 @@ export default class Dashboard extends AbstractView {
      */
     render() {
         return html`
-        <p>hello, ${this.name}</p>
-            `
+                <my-navbar></my-navbar>
+                <p>hello, ${this.name}</p>
+                `
     }
 }

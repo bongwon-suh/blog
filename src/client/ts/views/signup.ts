@@ -121,24 +121,25 @@ export default class SignUp extends AbstractView {
     * make Template
     */
     render() {
-       return html `
-                   <div class="signup">
-                       <h2 class="signup_title">Sign Up</h2>
-                       <form class="signup-form">
-                           <div class="signup-form-field">
-                               <input id="user_id" name="user_id" type="text" class="signup-form-field__input" placeholder="ID" required />
-                           </div>
-                           <div class="signup-form-field">
-                               <input id="password" name="user_pwd" type="password" class="signup-form-field__input" placeholder="Password" required />
-                           </div>
-                           <div class="signup-form-field">
-                               <input id="confirm_password" type="password" class="signup-form-field__input" placeholder="Confirm Password" required />
-                           </div>
-                           <div class="signup-form-field">
-                               <div id="signup" class="signup-form-field__button" @click=${this.submitSignUp}>Sign up</div>
-                           </div>
-                       </form>
-                   </div>
+       return html`
+                    <my-navbar></my-navbar>
+                    <div class="signup">
+                        <h2 class="signup_title">Sign Up</h2>
+                        <form class="signup-form">
+                            <div class="signup-form-field">
+                                <input id="user_id" name="user_id" type="text" class="signup-form-field__input" placeholder="ID" required />
+                            </div>
+                            <div class="signup-form-field">
+                                <input id="password" name="user_pwd" type="password" class="signup-form-field__input" placeholder="Password" required />
+                            </div>
+                            <div class="signup-form-field">
+                                <input id="confirm_password" type="password" class="signup-form-field__input" placeholder="Confirm Password" required />
+                            </div>
+                            <div class="signup-form-field">
+                                <div id="signup" class="signup-form-field__button" @click=${this.submitSignUp}>Sign up</div>
+                            </div>
+                        </form>
+                    </div>
                    `
     }
 }

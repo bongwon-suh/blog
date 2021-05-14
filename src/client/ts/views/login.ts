@@ -113,20 +113,21 @@ export default class Login extends AbstractView {
     */
     render() {
         return html`
-                    <div class="login">
-                        <h2 class="login_title">Login</h2>
-                        <form class="login-form">
-                            <div class="login-form-field">
-                                <input id="user_id" type="text" class="login-form-field__input" placeholder="ID" required />
-                            </div>
-                            <div class="login-form-field">
-                                <input id="password" type="password" class="login-form-field__input" placeholder="Password" required />
-                            </div>
-                            <div class="login-form-field">
-                                <div id="login" class="login-form-field__button" @click=${this.submitLogin}>Login</div>
-                            </div>
-                        </form>
-                    </div>
-                    `
+                <my-navbar></my-navbar>
+                <div class="login">
+                    <h2 class="login_title">Login</h2>
+                    <form class="login-form">
+                        <div class="login-form-field">
+                            <input id="user_id" type="text" class="login-form-field__input" placeholder="ID" required />
+                        </div>
+                        <div class="login-form-field">
+                            <input id="password" type="password" class="login-form-field__input" placeholder="Password" required />
+                        </div>
+                        <div class="login-form-field">
+                            <div id="login" class="login-form-field__button" @click=${this.submitLogin}>Login</div>
+                        </div>
+                    </form>
+                </div>
+                `
     }
 }

@@ -32,6 +32,9 @@ export default class Post extends AbstractView {
      * make Template
      */
     render() {
-        return html`<p>hello, ${this.name}</p>`
+        return html`
+                    <my-navbar></my-navbar>
+                    <p>hello, ${this.name}</p>
+                    `
     }
 }
