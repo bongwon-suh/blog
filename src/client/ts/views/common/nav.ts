@@ -56,7 +56,7 @@ class MyHeader extends LitElement {
                             if(result.responseText) {
                                 return html`
                                         <nav class="nav">
-                                            <a href="/" class="nav__link" data-link>Dashboard</a>
+                                            <a href="/" class="nav__link" data-link>Profile</a>
                                             <a href="/post" class="nav__link" data-link>Posts</a>
                                             <a href="/settings" class="nav__link" data-link>Settings</a>
                                             <a href="/settings" class="nav__link" data-link>글쓰기</a>
@@ -66,7 +66,7 @@ class MyHeader extends LitElement {
                             else {
                                 return html`
                                         <nav class="nav">
-                                            <a href="/" class="nav__link" data-link>Dashboard</a>
+                                            <a href="/" class="nav__link" data-link>Profile</a>
                                             <a href="/post" class="nav__link" data-link>Posts</a>
                                             <a href="/settings" class="nav__link" data-link>Settings</a>
                                         </nav>
