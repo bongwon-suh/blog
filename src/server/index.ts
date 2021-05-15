@@ -70,6 +70,7 @@ njk.configure(path.join(common.projectDir, 'static', 'template'), {
 app.use('/static/css', express.static(path.join(common.projectDir, 'static', 'css')));
 app.use('/static/js', express.static(path.join(common.projectDir, 'static', 'js')));
 app.use('/static/assets', express.static(path.join(common.projectDir, 'static', 'assets')));
+app.use('/static/images', express.static(path.join(common.projectDir, 'static', 'images')));
 
 // router
 app.use(router);
