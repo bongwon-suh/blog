@@ -12,7 +12,7 @@ window.addEventListener("load", ()=>{
 function initRouter() {
     const router = new Router(document.querySelector("main"));
     router.setRoutes([
-        { path: "/", component: "dashboard-container" },
+        { path: "/", component: "profile-container" },
         { path: "/settings", component: "setting-container" },
         { path: "/post", component: "post-container"},
         { path: "/login", component: "auth-login" },
