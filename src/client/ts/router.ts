@@ -17,5 +17,6 @@ function initRouter() {
         { path: "/post", component: "post-container"},
         { path: "/login", component: "auth-login" },
         { path: "/signup", component: "auth-signup" },
+        { path: "/write", component: "write-container"},
     ])
 }
