@@ -58,7 +58,7 @@ class MyHeader extends LitElement {
                                         <nav class="nav">
                                             <a href="/" class="nav__link" data-link>Profile</a>
                                             <a href="/post" class="nav__link" data-link>Posts</a>
-                                            <a href="/settings" class="nav__link" data-link>Settings</a>
+                                            <a href="/projects" class="nav__link" data-link>Project</a>
                                             <a href="/settings" class="nav__link" data-link>글쓰기</a>
                                         </nav>
                                         `
@@ -68,7 +68,7 @@ class MyHeader extends LitElement {
                                         <nav class="nav">
                                             <a href="/" class="nav__link" data-link>Profile</a>
                                             <a href="/post" class="nav__link" data-link>Posts</a>
-                                            <a href="/settings" class="nav__link" data-link>Settings</a>
+                                            <a href="/projects" class="nav__link" data-link>Project</a>
                                         </nav>
                                         `
                             }
