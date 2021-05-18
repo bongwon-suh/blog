@@ -50,7 +50,8 @@ export const login = async function(req: Request, res: Response) {
 }
 
 export const getUser = async function (req: Request, res: Response) {
-    res.status(200).json(req.user)
+    if (req.user) return res.status(200).json(req.user)
+    return res.status(200).json("회원 정보가 없습니다.")
 }
 
 export const test = async function (req: Request, res: Response) {

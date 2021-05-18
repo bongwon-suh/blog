@@ -26,3 +26,13 @@ export const createProject = async function(req: Request, res: Response) {
         return res.status(500).json("오류가 발생했습니다.");
     }
 }
+
+export const getProjectList = async function(req: Request, res: Response) {
+    try {
+        const list = await Project.find();
+        return res.status(200).json(list);
+    }
+    catch {
+        return res.status(500).json("목록을 받아 올 수 없습니다.");
+    }
+}
