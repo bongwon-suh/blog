@@ -6,7 +6,7 @@ interface APIObject {
 export async function sendAPI(method: string, obj: APIObject) {
     try {
         const result = await makeRequest(method, obj.url, obj.data);
-        return result;
+        return JSON.parse(result);
     }
     catch (err) {
         throw err;
@@ -23,7 +23,7 @@ function makeRequest(method: string, url: string, data: {}): Promise<any> {
 
         xhr.onload = ()=>{
             if (xhr.status >= 200 && xhr.status < 300)
-                resolve({"status": xhr.status, "statusText": xhr.statusText, "responseText": xhr.responseText})
+                resolve(xhr.response)
             else
                 reject({"status": xhr.status, "statusText": xhr.statusText, "responseText": xhr.responseText})
         };
