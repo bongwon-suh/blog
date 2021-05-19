@@ -53,13 +53,13 @@ class MyHeader extends LitElement {
                     ${until(
                         this.getUserInfo()
                         .then((result)=>{
-                            if(result.responseText) {
+                            if(result.id) {
                                 return html`
                                         <nav class="nav">
                                             <a href="/" class="nav__link" data-link>Profile</a>
                                             <a href="/post" class="nav__link" data-link>Posts</a>
                                             <a href="/projects" class="nav__link" data-link>Project</a>
-                                            <a href="/settings" class="nav__link" data-link>글쓰기</a>
+                                            <a href="/write" class="nav__link" data-link>글쓰기</a>
                                         </nav>
                                         `
                             }
