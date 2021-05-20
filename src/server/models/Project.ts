@@ -9,8 +9,17 @@ export class Project extends BaseEntity{
     @Column()
     title: string;
 
-    @Column()
+    @Column({type: "text"})
     content: string;
+
+    @Column()
+    description: string;
+
+    @Column()
+    dev_period: string;
+
+    @Column()
+    dev_tool: string;
 
     @CreateDateColumn()
     register_date: Date;

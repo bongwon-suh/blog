@@ -17,4 +17,7 @@ export interface Project extends ResponseStatus {
     "content": string;
     "register_date": Date;
     "authorId": number;
+    "description": string;
+    "dev_period": string;
+    "dev_tool": string;
 }
