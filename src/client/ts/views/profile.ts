@@ -21,16 +21,45 @@ export default class Profile extends AbstractView {
      * make Stylesheet
      */
     static styles = css`
-        .container {
+        .profile {
             display: flex;
             justify-content: center;
+            background: #222222;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
+            padding: 200px 0;
         }
-        .profile-image__img {
-            height: 300px;
+        .profile-text {
+            display: flex;
+            flex-direction: column;
+            margin-right: 50px;
+        }
+        .profile-text_title {
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+        }
+        .profile-text_subtitle {
+            font-size: 28px;
+            width: 400px;
+            color: #ABABAB;
+        }
+        .profile-text_button {
+            text-decoration: none;
+            color: white;
+            background: #4b6cc1;
+            width: fit-content;
+            font-size: 18px;
+            padding: 10px 20px;
             border-radius: 10px;
         }
-        .profile-skill__img {
-            width: 60px;
+        .profile-image {
+            padding: 10px;
+            background: black;
+            margin-left:50px;
+        }
+        .profile-image_img {
+            width: 250px;
+            border-radius: 5px;
         }
     `;
 
@@ -39,68 +68,15 @@ export default class Profile extends AbstractView {
      */
     render() {
         return html`
-                <link rel="stylesheet"
-                      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-                      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-                      crossorigin="anonymous"/>
                 <my-navbar></my-navbar>
-                <div class="container">
-                    <div class="profile">
-                        <div class="profile-image">
-                            <img class="profile-image__img" src="/static/images/profile.jpg">
-                        </div>
-                        <div class="profile-contact">
-                            <div class="profile-contact-introduce">
-                                나는 누구인가?<br>
-                                나는 누구인가?<br>
-                                나는 누구인가?
-                            </div>
-                            <div class="profile-contact-title">
-                                <h1>Contact</h1>
-                            </div>
-                            <div class="profile-contact-email">
-                                <h3>abcdef@gmail.com<h3>
-                            </div>
-                            <div class="profile-contact-phone">
-                                <h3>(+82)10 - 1234 - 5678<h3>
-                            </div>
-                            <div class="profile-contact-icon">
-                                <i class="fab fa-github-square"></i>
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                        </div>
+                <div class="profile">
+                    <div class="profile-text">
+                        <span class="profile-text_title">Lorem 한글은 어떻게 나오나 is simply</span>
+                        <span class="profile-text_subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</span>
+                        <a class="profile-text_button" href="/projects">My Projects</a>
                     </div>
-                    <div class="profile">
-                        <div class="profile-skill">
-                            <img class="profile-skill__img" src="/static/images/typescript.png">
-                            <img class="profile-skill__img" src="/static/images/javascript.png">
-                            <img class="profile-skill__img" src="/static/images/nodejs.png">
-                            <div class="profile-skill-intoduce">
-                                텍스트 영역
-                            </div>
-                        </div>
-                        <div class="profile-skill">
-                            <img class="profile-skill__img" src="/static/images/python.png">
-                            <img class="profile-skill__img" src="/static/images/django.png">
-                            <img class="profile-skill__img" src="/static/images/flask.png">
-                            <div class="profile-skill-intoduce">
-                                텍스트 영역
-                            </div>
-                        </div>
-                        <div class="profile-skill">
-                            <img class="profile-skill__img" src="/static/images/mariadb.png">
-                            <img class="profile-skill__img" src="/static/images/mongodb.png">
-                            <div class="profile-skill-intoduce">
-                                텍스트 영역
-                            </div>
-                        </div>
-                        <div class="profile-skill">
-                            <img class="profile-skill__img" src="/static/images/html.png">
-                            <img class="profile-skill__img" src="/static/images/css.png">
-                            <div class="profile-skill-intoduce">
-                                텍스트 영역
-                            </div>
-                        </div>
+                    <div class="profile-image">
+                        <img class="profile-image_img" src="/static/images/profile.jpg">
                     </div>
                 </div>
                 `
