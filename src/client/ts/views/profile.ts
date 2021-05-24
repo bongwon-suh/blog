@@ -29,7 +29,7 @@ export default class Profile extends AbstractView {
         .profile {
             display: flex;
             justify-content: center;
-            width: 100vw;
+            width: 100%;
             background: #222222;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
             padding: 100px 0 150px 0;
@@ -71,19 +71,32 @@ export default class Profile extends AbstractView {
             border-radius: 3px;
             margin-bottom: -80px;
         }
-        .skill {
+        .section {
             display: flex;
             flex-direction: column;
-            width: 90%;
+            align-items: center;
             margin: 50px 0;
         }
-        .skill-title_text {
+        .section-title {
             font-size: 24px;
             color: #919191;
             font-weight: 600;
-            border-bottom: 4px solid #f6f6f6;
             letter-spacing: .063em;
-            padding-bottom: 15px;
+            width: 300px;
+            text-align: center;
+        }
+        .values-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .core {
+            background: #f6f6f6;
+            border-radius: 50%;
+            font-size: 24px;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            margin: 80px;
         }
         .skill-content {
             display: flex;
@@ -109,7 +122,7 @@ export default class Profile extends AbstractView {
             flex-direction: column;
             align-items: center;
             margin: 50px 0;
-            width: 100vw;
+            width: 100%;
             height: 800px;
             clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 100px));
             background: #f6f6f6;
@@ -117,17 +130,36 @@ export default class Profile extends AbstractView {
         }
         .life-title {
             margin-top: 80px;
-        }
-        .life-title_text {
+            width: 300px;
+            text-align: center;
             font-size: 24px;
             color: #919191;
             font-weight: 600;
-            border-bottom: 4px solid;
             letter-spacing: .063em;
-            padding-bottom: 15px;
         }
         .life_img {
             width: 800px;
+        }
+        .contact {
+            width: 100%;
+            background: #222222;
+            clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
+            padding: 80px 0 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-info {
+            font-size: 18px;
+            color: white
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+        }
+        .icon {
+            margin-right: 10px;
+            color: #4b6cc1;
         }
     `;
 
@@ -136,9 +168,13 @@ export default class Profile extends AbstractView {
      */
     render() {
         return html`
+                <link rel="stylesheet"
+                    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+                    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+                    crossorigin="anonymous"/>
                 <my-navbar></my-navbar>
                 <div class="container">
-                    <div class="profile">
+                    <section class="profile">
                         <div class="profile-text">
                             <span class="profile-text_title">Lorem 한글은 어떻게 나오나 is simply</span>
                             <span class="profile-text_subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</span>
@@ -147,10 +183,28 @@ export default class Profile extends AbstractView {
                         <div class="profile-image">
                             <img class="profile-image_img" src="/static/images/profile2.jpg">
                         </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-title">
-                            <p class="skill-title_text">SKILLS</p>
+                    </section>
+                    <section class="section">
+                        <div class="section-title">
+                            <p>CORE VALUES</p>
+                        </div>
+                        <div class="values-content">
+                            <div class="core"><p>Lorem</p></div>
+                            <div class="core">Lorem</div>
+                            <div class="core">Lorem</div>
+                        </div>
+                    </section>
+                    <section class="life">
+                        <div class="life-title">
+                            <p>LIFE</p>
+                        </div>
+                        <div class="life-image">
+                            <img class="life_img" src="/static/images/life.png">
+                        </div>
+                    </section>
+                    <section class="section">
+                        <div class="section-title">
+                            <p>SKILLS</p>
                         </div>
                         <div class="skill-content">
                             <div class="skill-content-image">
@@ -190,15 +244,26 @@ export default class Profile extends AbstractView {
                                 <span class="skill-content_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="life">
-                        <div class="life-title">
-                            <p class="life-title_text">LIFE</p>
+                    </section>
+                    <section class="contact">
+                        <div class="section-title">
+                            <p>CONTACT</p>
                         </div>
-                        <div class="life-image">
-                            <img class="life_img" src="/static/images/life.png">
+                        <div class="contact-info">
+                            <div class="contact-info-item">
+                                <i class="fas fa-envelope icon"></i>
+                                <p>abcd@gmail.com</p>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-mobile-alt icon"></i>
+                                <p>(+82)10 1234 5678</p>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fab fa-github icon"></i>
+                                <p>github</p>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
                 `
     }

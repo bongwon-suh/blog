@@ -29,11 +29,10 @@ class MyHeader extends LitElement {
     }
 
     static styles = css`
-        
         .nav {
             display: flex;
             justify-content: flex-end;
-            width: 100vw;
+            width: 100%;
             background: #222222;
             box-shadow: 0 0 1rem rgba(0,0,0,.1);
         }
