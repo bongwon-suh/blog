@@ -13,6 +13,7 @@ import router from './routers/router';
 import { User } from './models/User';
 import "reflect-metadata";
 import { createConnection } from 'typeorm';
+import serveFavicon from 'serve-favicon';
 
 // db initailize
 createConnection()
@@ -71,6 +72,9 @@ app.use('/static/css', express.static(path.join(common.projectDir, 'static', 'cs
 app.use('/static/js', express.static(path.join(common.projectDir, 'static', 'js')));
 app.use('/static/assets', express.static(path.join(common.projectDir, 'static', 'assets')));
 app.use('/static/images', express.static(path.join(common.projectDir, 'static', 'images')));
+
+//favicon
+app.use(serveFavicon(path.join(common.projectDir, 'static', 'favicon.ico')));
 
 // router
 app.use(router);
