@@ -18,6 +18,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.13",
+    "serve-favicon": "^2.5.0",
     "typeorm": "^0.2.32"
   },
   "devDependencies": {
@@ -26,6 +27,7 @@
     "@types/nunjucks": "^3.1.4",
     "@types/passport": "^1.0.6",
     "@types/passport-local": "^1.0.33",
+    "@types/serve-favicon": "^2.5.2",
     "mariadb": "^2.5.3",
     "ts-node": "^9.1.1"
   }
