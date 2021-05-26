@@ -48,21 +48,26 @@ export default class Setting extends AbstractView {
         }
         .card {
             display: flex;
-            border: 1px solid;
-            margin: 20px;
-            width: 50vw;
+            margin: 100px 0;
         }
         .card-image {
-            margin-right: 10px;
+            padding: 40px;
+            background: #f6f6f6;
+            border-radius: 5px;
+            margin-right: 25px;
         }
         .card-image_img {
-            width: 200px;
+            margin-bottom: -100px;
+            width: 500px;
+            box-shadow: 0 1px 5px rgb(0 0 0 / 5%), 0 5px 30px rgb(0 0 0 / 20%);
+            border-radius: 3px;
         }
         .card-body {
-            margin-left: 10px;
+            width: 250px;
+            margin-left: 25px;
         }
         .card-title {
-            font-size: 24px;
+            font-size: 42px;
             font-weight: 700;
             color: #212529;
             margin: 10px;
@@ -93,7 +98,7 @@ export default class Setting extends AbstractView {
                         .then(result=>result.map(item=>
                         html`<div class="card">
                                 <div class="card-image">
-                                    <img class="card-image_img" src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" alt="Grapefruit slice atop a pile of other slices">
+                                    <img class="card-image_img" src="https://sebkay.com/assets/img/projects/cazz-photography/featured.jpg" alt="Grapefruit slice atop a pile of other slices">
                                 </div>
                                 <div class="card-body">
                                     <div class="card-title">${item.title}</div>
