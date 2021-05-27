@@ -94,7 +94,7 @@ export default class Setting extends AbstractView {
         }
         .card-image_img {
             margin-bottom: -100px;
-            width: 500px;
+            width: 40vw;
             box-shadow: 0 1px 5px rgb(0 0 0 / 5%), 0 5px 30px rgb(0 0 0 / 20%);
             border-radius: 3px;
         }
@@ -106,19 +106,19 @@ export default class Setting extends AbstractView {
             margin-left: 25px;
         }
         .card-title {
-            font-size: 42px;
+            font-size: 3rem;
             font-weight: 700;
             color: #212529;
             margin: 10px;
         }
         .card-content {
-            font-size: 18px;
+            font-size: 1.5rem;
             color: #495057;
             margin: 10px;
-            line-height: 30px;
+            line-height: 2.2rem;
         }
         .card-footer {
-            font-size: 18px;
+            font-size: 1rem;
             color: #868E96;
             margin: 10px;
         }
