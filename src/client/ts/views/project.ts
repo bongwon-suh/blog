@@ -66,16 +66,6 @@ export default class Setting extends AbstractView {
             color: #ABABAB;
             line-height: initial;
         }
-        .top-text_button {
-            text-decoration: none;
-            color: white;
-            background: #4b6cc1;
-            width: fit-content;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
         .card-container {
             display: flex;
             flex-direction: column;
