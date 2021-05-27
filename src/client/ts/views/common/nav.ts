@@ -40,6 +40,7 @@ class MyHeader extends LitElement {
             padding: 20px 20px 20px 20px;
             color: #eeeeee;
             font-weight: 500;
+            font-size: 1.2rem;
             text-decoration: none;
         }
         .nav__link:hover{
