@@ -99,7 +99,10 @@ export default class Setting extends AbstractView {
             border-radius: 3px;
         }
         .card-body {
-            width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 350px;
             margin-left: 25px;
         }
         .card-title {
@@ -109,14 +112,21 @@ export default class Setting extends AbstractView {
             margin: 10px;
         }
         .card-content {
-            font-size: 16px;
+            font-size: 18px;
             color: #495057;
             margin: 10px;
+            line-height: 30px;
         }
         .card-footer {
-            font-size: 14px;
+            font-size: 18px;
             color: #868E96;
             margin: 10px;
+        }
+        .period {
+            margin: 10px 0;
+        }
+        .tools {
+            margin: 10px 0;
         }
     `;
     
