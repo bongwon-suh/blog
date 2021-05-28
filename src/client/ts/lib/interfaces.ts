@@ -21,3 +21,14 @@ export interface Project extends ResponseStatus {
     "dev_period": string;
     "dev_tool": string;
 }
+
+export interface Blog {
+    "id": number;
+    "title": string;
+    "content": string;
+    "register_date": Date;
+    "authorId": number;
+    "description": string;
+    "dev_period": string;
+    "dev_tool": string;
+}
