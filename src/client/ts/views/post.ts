@@ -8,12 +8,31 @@ import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
+import { Blog } from '../lib/interfaces';
 
 @customElement('post-container')
 export default class Post extends AbstractView {
     constructor() {
         super();
         this.setTitle("Post");
+    }
+
+    protected getBlogList(): Promise<Blog[]> {
+        return new Promise( (resolve, reject)=>{
+            const msg = {
+                "url": '/blog',
+                "data": {}
+            };
+            utils.sendAPI('GET', msg)
+            .then( (result)=>{
+                console.log(result)
+                resolve(result)
+            })
+            .catch((err)=>{
+                console.log(err)
+                reject(err)
+            });
+        })
     }
 
     /**
