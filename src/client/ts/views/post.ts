@@ -8,13 +8,14 @@ import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
+import { until } from 'lit/directives/until';
 import { Blog } from '../lib/interfaces';
 
 @customElement('post-container')
 export default class Post extends AbstractView {
     constructor() {
         super();
-        this.setTitle("Post");
+        this.setTitle("Blog");
     }
 
     protected getBlogList(): Promise<Blog[]> {
@@ -82,7 +83,25 @@ export default class Post extends AbstractView {
                             <span class="top-text_subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</span>
                         </div>
                     </section>
-                    <p>hello, ${this.name}</p>
+                    <div class="card-container">
+                        ${until(
+                            this.getBlogList()
+                            .then(result=>result.map(item=>
+                            html`<div class="card">
+                                    <div class="card-image">
+                                        <img class="card-image_img" src="https://sebkay.com/assets/img/blog/2018/09/calendi-thumb.jpg" alt="Grapefruit slice atop a pile of other slices">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">${item.title}</div>
+                                        <div class="card-content">${item.description}</div>
+                                        <div class="card-footer">
+                                            <div class="period">개발 기간 : ${item.dev_period}</div>
+                                            <div class="tools">개발 언어 : ${item.dev_tool}</div>
+                                        </div>
+                                    </div>
+                                </div>`
+                            )))}
+                    </div>
                     `
     }
 }
