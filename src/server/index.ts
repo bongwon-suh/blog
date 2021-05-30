@@ -14,6 +14,7 @@ import { User } from './models/User';
 import "reflect-metadata";
 import { createConnection } from 'typeorm';
 import serveFavicon from 'serve-favicon';
+import morgan from 'morgan';
 
 // db initailize
 createConnection()
@@ -60,6 +61,8 @@ passport.deserializeUser( (user: User, cb)=>{
     cb(null, user);
 });
 
+//morgan
+app.use(morgan('combined'));
 
 // template engine
 njk.configure(path.join(common.projectDir, 'static', 'template'), {
