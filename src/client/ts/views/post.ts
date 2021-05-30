@@ -66,6 +66,30 @@ export default class Post extends AbstractView {
             color: #ABABAB;
             line-height: initial;
         }
+        .card-container {
+
+        }
+        .card {
+
+        }
+        .card-image {
+
+        }
+        .card-image_img {
+            width: 30vw;
+        }
+        .card-body {
+
+        }
+        .card-title{
+
+        }
+        .card-content {
+
+        }
+        .card-footer {
+
+        }
     `;
     
     @property()
