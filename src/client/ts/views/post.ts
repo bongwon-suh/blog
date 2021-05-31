@@ -67,28 +67,47 @@ export default class Post extends AbstractView {
             line-height: initial;
         }
         .card-container {
-
+            display: flex;
+            flex-wrap: wrap;
         }
         .card {
-
+            margin: 5vw auto;
         }
         .card-image {
-
         }
         .card-image_img {
-            width: 30vw;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            display: block;
+            width: 40vw;
         }
         .card-body {
-
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background: #f6f6f6;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            height: 40vh;
+            width: 40vw;
         }
         .card-title{
-
+            word-break: break-word;
+            color: rgb(25, 26, 29);
+            font-size: 2rem;
+            padding: 2% 0px;
+            margin: 0px 10%;
+            line-height: normal;
         }
         .card-content {
-
+            color: #191a1d;
+            font-size: 1.5rem;
+            padding: 2% 0;
         }
         .card-footer {
-
+            color: #5e5e5e;
+            font-size: 1rem;
+            padding: 2% 0;
         }
     `;
     
@@ -116,12 +135,9 @@ export default class Post extends AbstractView {
                                         <img class="card-image_img" src="https://sebkay.com/assets/img/blog/2018/09/calendi-thumb.jpg" alt="Grapefruit slice atop a pile of other slices">
                                     </div>
                                     <div class="card-body">
-                                        <div class="card-title">${item.title}</div>
-                                        <div class="card-content">${item.description}</div>
-                                        <div class="card-footer">
-                                            <div class="period">개발 기간 : ${item.dev_period}</div>
-                                            <div class="tools">개발 언어 : ${item.dev_tool}</div>
-                                        </div>
+                                        <span class="card-title">${item.title}</span>
+                                        <span class="card-content">${item.description}</span>
+                                        <span class="card-footer">${item.dev_period}</span>
                                     </div>
                                 </div>`
                             )))}
