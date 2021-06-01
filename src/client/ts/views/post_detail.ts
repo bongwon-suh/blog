@@ -9,8 +9,10 @@
  import  AbstractView from './AbstractView';
  import { sendAPI, parseParams} from '../lib/utils';
  import { until } from 'lit/directives/until';
+ import { unsafeHTML } from 'lit/directives/unsafe-html';
  import { Blog } from '../lib/interfaces';
  import { routes } from '../router';
+ 
 
  @customElement('post-detail')
  export default class PostDetail extends AbstractView {
@@ -52,7 +54,7 @@
          return html`
                      <my-navbar></my-navbar>
                      <h1>hello world</h1>
-                     ${until(this.getBlogDetail().then(result=>html`<div>${result.title}</div>`))}
+                     ${until(this.getBlogDetail().then(result=>html`<div>${unsafeHTML(result.title)}</div>`))}
                      `
      }
  }
