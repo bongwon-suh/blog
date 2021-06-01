@@ -29,3 +29,18 @@ function makeRequest(method: string, url: string, data: {}): Promise<any> {
         };
     })
 }
+
+export function parseParams(pattern: string, uri: string) {
+    let params: any = {}
+  
+    const patternArray = pattern.split('/').filter((path) => { return path != '' })
+    const uriArray = uri.split('/').filter((path) => { return path != '' })
+  
+    patternArray.map((pattern, i) => {
+      if (/^:/.test(pattern)) {
+            params[pattern.substring(1)] = uriArray[i]
+        }
+    })
+    return params
+  }
+  
