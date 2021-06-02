@@ -75,6 +75,7 @@ app.use('/static/css', express.static(path.join(common.projectDir, 'static', 'cs
 app.use('/static/js', express.static(path.join(common.projectDir, 'static', 'js')));
 app.use('/static/assets', express.static(path.join(common.projectDir, 'static', 'assets')));
 app.use('/static/images', express.static(path.join(common.projectDir, 'static', 'images')));
+app.use('/uploads', express.static(path.join(common.projectDir, 'uploads')));
 
 //favicon
 app.use(serveFavicon(path.join(common.projectDir, 'static', 'favicon.ico')));
