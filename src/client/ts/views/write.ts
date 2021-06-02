@@ -52,7 +52,25 @@ export default class Write extends AbstractView {
         .catch((err)=>{
             window.alert(err.responseText);
         })
+    }
 
+    protected upload = (e: Event)=>{
+        const input_file = this.shadowRoot!.getElementById("FileInput") as HTMLInputElement;
+        console.log(input_file);
+        const form_data = new FormData();
+        form_data.append('img', input_file.files![0])
+
+        const xhr = new XMLHttpRequest;
+        xhr.onload = () => {
+            if(xhr.status == 200 || xhr.status == 201) {
+                console.log(xhr.responseText);
+            }
+            else {
+                console.error(xhr.responseText);
+            }
+        }
+        xhr.open('POST', '/upload');
+        xhr.send(form_data);
     }
 
     /**
@@ -87,6 +105,8 @@ export default class Write extends AbstractView {
                             <div id="submit" class="form-field_button" @click=${this.submit}>Login</div>
                         </div>
                     </form>
+                    <input id="FileInput" type="file">
+                    <div id="submit" class="form-field_button" @click=${this.upload}>업로드</div>
                 `
     }
 }
