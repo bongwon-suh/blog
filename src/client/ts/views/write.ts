@@ -8,12 +8,26 @@ import { css, html } from 'lit';
 import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
+import { until } from 'lit/directives/until';
+import { ImageFile } from '../lib/interfaces';
 
 @customElement('write-container')
 export default class Write extends AbstractView {
     constructor() {
         super();
         this.setTitle("Write");
+        this.setProperties();
+        console.log(this.items)
+    }
+
+    @property( { type: Array })
+    items:any = [];
+
+    protected setProperties = () => {
+        this.getImageList()
+        .then((result)=>{
+            this.items = result
+        })
     }
 
     protected submit = (e: Event)=>{
@@ -55,6 +69,7 @@ export default class Write extends AbstractView {
     }
 
     protected upload = (e: Event)=>{
+        console.log(this.items)
         const input_file = this.shadowRoot!.getElementById("FileInput") as HTMLInputElement;
         console.log(input_file);
         const form_data = new FormData();
@@ -64,6 +79,7 @@ export default class Write extends AbstractView {
         xhr.onload = () => {
             if(xhr.status == 200 || xhr.status == 201) {
                 console.log(xhr.responseText);
+                this.setProperties();
             }
             else {
                 console.error(xhr.responseText);
@@ -73,6 +89,24 @@ export default class Write extends AbstractView {
         xhr.send(form_data);
     }
 
+    protected getImageList(): Promise<ImageFile[]> {
+        return new Promise( (resolve, reject)=>{
+            const msg = {
+                "url": '/upload/imagelist',
+                "data": {}
+            };
+            utils.sendAPI('GET', msg)
+            .then((result)=>{
+                console.log(result);
+                resolve(result);
+            })
+            .catch((err)=>{
+                console.log(err);
+                reject(err);
+            })
+        })
+    }
+
     /**
      * make Stylesheet
      */
@@ -80,33 +114,70 @@ export default class Write extends AbstractView {
         :host {
             color: green;
         }
+        .write-form {
+
+        }
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-field-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-field_input {
+            width: 70vw;
+            max-width: 800px;
+            font-size: 1rem;
+            padding: 0.4rem;
+            margin: 0.5rem;
+        }
+        .form-field_textarea {
+            width: 30vw;
+            height: 60vh;
+            margin: 1rem;
+            background: aquamarine;
+        }
     `;
 
     /**
      * make Template
      */
+    value: number = 1;
     render() {
         return html`
                     <my-navbar></my-navbar>
                     <form class="write-form">
                         <div class="form-field">
-                            <select id="Category" class="form-field_select">
+                            <input id="title" class="form-field_input" type="text" placeholder="title" required />
+                            <input id="description" class="form-field_input" type="text" placeholder="description" required />
+                            <input id="period" class="form-field_input" type="text" placeholder="dev period" required />
+                            <input id="tools" class="form-field_input" type="text" placeholder="dev tools" required />
+                            <select id="category" class="form-field_input">
                                 <option value="Project">Project</option>
                                 <option value="Blog">Blog</option>
                             </select>
                         </div>
-                        <div class="form-field">
-                            <input id="Title" class="form-field_input" type="text" placeholder="title" required />
+                        <div class="form-field-row">
+                            <textarea id="" class="form-field_textarea"></textarea>
+                            <div id="preview" class="form-field_textarea">test</div>
                         </div>
                         <div class="form-field">
-                            <textarea id="Content" class="form-field_textarea"></textarea>
-                        </div>
-                        <div class="form-field">
-                            <div id="submit" class="form-field_button" @click=${this.submit}>Login</div>
                         </div>
                     </form>
                     <input id="FileInput" type="file">
                     <div id="submit" class="form-field_button" @click=${this.upload}>업로드</div>
+                    <div>
+                        ${this.items.map((item: any)=>html`
+                            <div class="card">
+                                <h2>${item.size}</h2>
+                                <img class="" src="/uploads/${item.filename}" style="width:100px;">
+                            </div>`
+                        )}
+                    </div>
                 `
     }
 }
