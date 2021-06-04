@@ -21,7 +21,7 @@ export default class Write extends AbstractView {
     }
 
     @property( { type: Array })
-    items:any = [];
+    items: ImageFile[] = [];
 
     protected setProperties = () => {
         this.getImageList()
@@ -171,7 +171,7 @@ export default class Write extends AbstractView {
                     <input id="FileInput" type="file">
                     <div id="submit" class="form-field_button" @click=${this.upload}>업로드</div>
                     <div>
-                        ${this.items.map((item: any)=>html`
+                        ${this.items.map((item: ImageFile)=>html`
                             <div class="card">
                                 <h2>${item.size}</h2>
                                 <img class="" src="/uploads/${item.filename}" style="width:100px;">
