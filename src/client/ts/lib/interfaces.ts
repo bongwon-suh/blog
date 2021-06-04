@@ -32,3 +32,14 @@ export interface Blog {
     "dev_period": string;
     "dev_tool": string;
 }
+
+export interface ImageFile {
+    "fieldname": string;
+    "originalname": string;
+    "encoding": string;
+    "mimetype": string;
+    "destination": string;
+    "filename": string;
+    "path": string;
+    "size": number;
+}
