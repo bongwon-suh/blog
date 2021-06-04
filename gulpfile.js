@@ -63,7 +63,10 @@ function clientWatch() {
         "global": true
     });
     bro.on('update', clientWatchBuild);
-    bro.on('log', ()=>{console.log("=========update=======")});
+    bro.on('log', ()=>{
+        const date = new Date()
+        console.log(`[${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] Updated`)
+    });
     
     function clientWatchBuild() {
         return bro
