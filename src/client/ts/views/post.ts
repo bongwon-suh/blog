@@ -130,7 +130,7 @@ export default class Post extends AbstractView {
                         ${until(
                             this.getBlogList()
                             .then(result=>result.map(item=>
-                            html`<div class="card">
+                            html`<div class="card"  onclick="location.href='/post/${item.id}'">
                                     <div class="card-image">
                                         <img class="card-image_img" src="https://sebkay.com/assets/img/blog/2018/09/calendi-thumb.jpg" alt="Grapefruit slice atop a pile of other slices">
                                     </div>
@@ -142,6 +142,7 @@ export default class Post extends AbstractView {
                                 </div>`
                             )))}
                     </div>
+                    <my-footer></my-footer>
                     `
     }
 }

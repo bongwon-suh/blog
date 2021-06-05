@@ -140,27 +140,7 @@ export default class Profile extends AbstractView {
         .life_img {
             width: 800px;
         }
-        .contact {
-            width: 100%;
-            background: #222222;
-            clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
-            padding: 80px 0 20px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .contact-info {
-            font-size: 18px;
-            color: white
-        }
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-        }
-        .icon {
-            margin-right: 10px;
-            color: #4b6cc1;
-        }
+
     `;
 
     /**
@@ -168,10 +148,7 @@ export default class Profile extends AbstractView {
      */
     render() {
         return html`
-                <link rel="stylesheet"
-                    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-                    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-                    crossorigin="anonymous"/>
+
                 <my-navbar></my-navbar>
                 <div class="container">
                     <section class="profile">
@@ -245,26 +222,8 @@ export default class Profile extends AbstractView {
                             </div>
                         </div>
                     </section>
-                    <section class="contact">
-                        <div class="section-title">
-                            <p>CONTACT</p>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-info-item">
-                                <i class="fas fa-envelope icon"></i>
-                                <p>abcd@gmail.com</p>
-                            </div>
-                            <div class="contact-info-item">
-                                <i class="fas fa-mobile-alt icon"></i>
-                                <p>(+82)10 1234 5678</p>
-                            </div>
-                            <div class="contact-info-item">
-                                <i class="fab fa-github icon"></i>
-                                <p>github</p>
-                            </div>
-                        </div>
-                    </section>
                 </div>
+                <my-footer></my-footer>
                 `
     }
 }

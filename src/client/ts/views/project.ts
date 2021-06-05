@@ -138,7 +138,7 @@ export default class Setting extends AbstractView {
                     ${until(
                         this.getProjectList()
                         .then(result=>result.map(item=>
-                        html`<div class="card">
+                        html`<div class="card" onclick="location.href='/projects/${item.id}'">
                                 <div class="card-image">
                                     <img class="card-image_img" src="https://sebkay.com/assets/img/projects/cazz-photography/featured.jpg" alt="Grapefruit slice atop a pile of other slices">
                                 </div>
@@ -153,6 +153,7 @@ export default class Setting extends AbstractView {
                             </div>`
                         )))}
                 </div>
+                <my-footer></my-footer>
                     `;
     }
 }
