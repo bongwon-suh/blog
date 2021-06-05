@@ -8,6 +8,7 @@ import { Router } from '@vaadin/router';
 export const routes = [
     { path: "/", component: "profile-container" },
     { path: "/projects", component: "project-container" },
+    { path: "/projects/:id", component: "project-detail" },
     { path: "/post", component: "post-container"},
     { path: "/post/:id", component: "post-detail"},
     { path: "/login", component: "auth-login" },
