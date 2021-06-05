@@ -5,7 +5,7 @@ import * as utils from '../../lib/utils';
 import { User } from '../../lib/interfaces';
 
 @customElement('my-navbar')
-class MyHeader extends LitElement {
+class Navbar extends LitElement {
     protected user: any
 
     constructor() {
