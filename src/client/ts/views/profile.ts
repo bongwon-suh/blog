@@ -31,23 +31,23 @@ export default class Profile extends AbstractView {
             justify-content: center;
             width: 100%;
             background: #222222;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
-            padding: 100px 0 150px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6.25rem));
+            padding: 6.25rem 0 9.375rem 0;
         }
         .profile-text {
             display: flex;
             flex-direction: column;
-            margin-right: 50px;
+            margin-right: 3.125rem;
         }
         .profile-text_title {
-            font-size: 36px;
+            font-size: 2.25rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
         .profile-text_subtitle {
-            font-size: 28px;
-            width: 500px;
+            font-size: 1.75rem;
+            width: 31.25rem;
             color: #ABABAB;
             line-height: initial;
         }
@@ -56,33 +56,33 @@ export default class Profile extends AbstractView {
             color: white;
             background: #4b6cc1;
             width: fit-content;
-            font-size: 18px;
-            padding: 10px 20px;
+            font-size: 1.125rem;
+            padding: 0.625rem 1.25rem;
             border-radius: 10px;
-            margin-top: 30px;
+            margin-top: 1.875rem;
         }
         .profile-image {
-            padding: 40px;
+            padding: 2.5rem;
             background: #121316;
             border-radius: 5px;
         }
         .profile-image_img {
-            width: 300px;
+            width: 18.75rem;
             border-radius: 3px;
-            margin-bottom: -80px;
+            margin-bottom: -5rem;
         }
         .section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 50px 0;
+            margin: 3.125rem 0;
         }
         .section-title {
-            font-size: 24px;
+            font-size: 1.5rem;
             color: #919191;
             font-weight: 600;
             letter-spacing: .063em;
-            width: 300px;
+            width: 18.75rem;
             text-align: center;
         }
         .values-content {
@@ -92,11 +92,11 @@ export default class Profile extends AbstractView {
         .core {
             background: #f6f6f6;
             border-radius: 50%;
-            font-size: 24px;
-            height: 200px;
-            width: 200px;
+            font-size: 1.5rem;
+            height: 12.5rem;
+            width: 12.5rem;
             text-align: center;
-            margin: 80px;
+            margin: 5rem;
         }
         .skill-content {
             display: flex;
@@ -104,41 +104,41 @@ export default class Profile extends AbstractView {
             justify-content: center;
         }
         .skill-content-image {
-            width: 200px;
-            margin: 30px 75px 30px 0;
+            width: 12.5rem;
+            margin: 1.875rem 4.688rem 1.875rem 0;
         }
         .skill-content_img {
-            width: 60px;
+            width: 3.75rem;
         }
         .skill-content-descripition {
-            width: 500px;
-            margin-left: 30px 0 30px; 75px;
+            width: 31.25rem;
+            margin-left: 1.875rem 0 1.875rem; 4.688rem;
         }
         .skill-content_text {
-            width: 500px;
+            width: 31.25rem;
         }
         .life {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 50px 0;
+            margin: 3.125rem 0;
             width: 100%;
-            height: 800px;
-            clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 calc(100% - 100px));
+            height: 50rem;
+            clip-path: polygon(0 0, 100% 6.25rem, 100% 100%, 0 calc(100% - 6.25rem));
             background: #f6f6f6;
-            padding-bottom: 250px;
+            padding-bottom: 15.63rem;
         }
         .life-title {
-            margin-top: 80px;
-            width: 300px;
+            margin-top: 5rem;
+            width: 18.75rem;
             text-align: center;
-            font-size: 24px;
+            font-size: 1.5rem;
             color: #919191;
             font-weight: 600;
             letter-spacing: .063em;
         }
         .life_img {
-            width: 800px;
+            width: 50rem;
         }
 
     `;
