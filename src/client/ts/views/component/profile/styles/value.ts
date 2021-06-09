@@ -29,6 +29,23 @@ export const valueStyles = css`
     height: 12.5rem;
     width: 12.5rem;
     text-align: center;
-    margin: 5rem;
+    margin: 4rem;
+}
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    .core {
+        height: 10rem;
+        width: 10rem;
+        margin: 45px;
+    }
+}
+@media screen and (max-width:767px) {
+    .values-content {
+        flex-direction: column;
+    }
+    .core {
+        height: 10rem;
+        width: 10rem;
+        margin: 24px;
+    }
 }
 `;

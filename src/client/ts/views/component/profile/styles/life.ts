@@ -26,4 +26,26 @@ export const lifeStyles = css`
 .life_img {
     width: 50rem;
 }
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    .life {
+        padding-bottom: 120px;
+        margin: 2.5rem 0px;
+    }
+    .life-title {
+    }
+    .life_img {
+        width: 700px;
+    }
+}
+@media screen and (max-width:767px) {
+    .life {
+        height: 570px;
+        padding-bottom: 0;
+    }
+    .life-title {
+    }
+    .life_img {
+        width: 340px;
+    }
+}
 `;

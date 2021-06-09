@@ -37,4 +37,46 @@ export const skillStyles = css`
 .skill-content_text {
     width: 31.25rem;
 }
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    .section {
+        margin: 0 0 3rem 0;
+    }
+    .section-title {
+    }
+    .skill-content {
+    }
+    .skill-content-image {
+        margin: 1.5rem 3rem 1.5rem 0px;
+    }
+    .skill-content_img {
+    }
+    .skill-content-descripition {
+        width: 21.25rem;
+    }
+}
+@media screen and (max-width:767px) {
+    .section {
+    }
+    .section-title {
+    }
+    .skill-content {
+        flex-direction: column;
+        margin: 20px auto; 
+    }
+    .skill-content-image {
+        width: auto;
+        margin: auto;
+    }
+    .skill-content_img {
+    }
+    .skill-content-descripition {
+        text-align: center;
+        width: auto;
+        margin-top: 10px;
+        line-height: 30px;
+    }
+    .skill-content_text {
+        width: auto;
+    }
+}
 `;
