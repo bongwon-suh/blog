@@ -10,6 +10,7 @@ import  AbstractView from './AbstractView';
 import * as utils from '../lib/utils';
 import { until } from 'lit/directives/until';
 import { ImageFile } from '../lib/interfaces';
+import { writeStyles } from './styles/write'
 
 @customElement('write-container')
 export default class Write extends AbstractView {
@@ -110,38 +111,9 @@ export default class Write extends AbstractView {
     /**
      * make Stylesheet
      */
-    static styles = css`
-        :host {
-            color: green;
-        }
-        .write-form {
-
-        }
-        .form-field {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .form-field-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .form-field_input {
-            width: 70vw;
-            max-width: 800px;
-            font-size: 1rem;
-            padding: 0.4rem;
-            margin: 0.5rem;
-        }
-        .form-field_textarea {
-            width: 30vw;
-            height: 60vh;
-            margin: 1rem;
-            background: aquamarine;
-        }
-    `;
+    static styles = [
+        writeStyles
+    ]
 
     /**
      * make Template
