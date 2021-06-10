@@ -9,6 +9,7 @@ import { customElement, property } from 'lit/decorators';
 import  AbstractView from './AbstractView';
 import { sendAPI, parseParams} from '../lib/utils';
 import { until } from 'lit/directives/until';
+import { postDetailStyles } from './styles/post_detail'
 import { unsafeHTML } from 'lit/directives/unsafe-html';
 import { Blog } from '../lib/interfaces';
 import { routes } from '../router';
@@ -52,8 +53,9 @@ export default class PostDetail extends AbstractView {
     /**
      * make Stylesheet
      */
-    static styles = css`
-    `;
+    static styles = [
+        postDetailStyles
+    ];
 
     /**
      * make Template
