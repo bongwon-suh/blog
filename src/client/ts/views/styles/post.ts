@@ -69,4 +69,64 @@ export const postStyles = css`
     font-size: 1rem;
     padding: 2% 0;
 }
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    .top-text {
+        margin-right: 0;
+    }
+    .top-text_title {
+        font-size: 28px;
+    }
+    .top-text_subtitle {
+        font-size:20px;
+        line-height: 28px;
+    }
+    .card-title{
+        font-size: 24px;
+    }
+    .card-content {
+        font-size: 22px;
+    }
+    .card-footer {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:767px) {
+    .top-text {
+        margin-right: 0;
+    }
+    .top-text_title {
+        font-size: 28px;
+    }
+    .top-text_subtitle {
+        font-size: 20px;
+        width: auto;
+        margin: 0 20px;
+        text-align: center;
+        line-height: 26px;
+    }
+    .card-container {
+        flex-direction: column;
+    }
+    .card {
+        margin: 40px auto;
+    }
+    .card-image {
+    }
+    .card-image_img {
+        width: 90vw;
+    }
+    .card-body {
+        width: 90vw;
+        height: 180px;
+    }
+    .card-title{
+        font-size: 28px;
+    }
+    .card-content {
+        font-size: 26px;
+    }
+    .card-footer {
+        font-size: 20px;
+    }
+}
 `
