@@ -87,3 +87,6 @@ SMACSS
 ### nodejs
 passport 로그인 인증 라이브러리 전략에 의해 관리
 crypto 암호화 모듈
+
+### nginx
+웹서버 로드밸런서, 정적파일 응답으로 사용되기도 함
