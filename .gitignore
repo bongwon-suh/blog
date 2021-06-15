@@ -6,3 +6,5 @@ SECRET.json
 ormconfig.json
 ormconfig.js
 uploads
+data
+.dockerenv
