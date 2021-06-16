@@ -37,11 +37,12 @@ class Navbar extends LitElement {
             box-shadow: 0 0 1rem rgba(0,0,0,.1);
         }
         .nav__link {
-            padding: 20px 20px 20px 20px;
+            padding: 20px 15px 10px 15px;
             color: #eeeeee;
             font-weight: 500;
             font-size: 1.2rem;
             text-decoration: none;
+            margin-rigth: 15px;
         }
         .nav__link:hover{
             background: rgba(255, 255, 255, 0.05);
@@ -51,7 +52,7 @@ class Navbar extends LitElement {
     render() {
         return html`
                     ${until(
-                        this.getUserInfo()
+                        this.getUserInfo() 
                         .then((result)=>{
                             if(result.id) {
                                 return html`
