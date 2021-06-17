@@ -11,7 +11,7 @@ import * as utils from '../lib/utils';
 import './common/nav';
 import './component/profile/profile'
 import './component/profile/value'
-import './component/profile/life'
+import './component/profile/timeline'
 import './component/profile/skill'
 
 @customElement('profile-container')
@@ -42,7 +42,7 @@ export default class Profile extends AbstractView {
                 <div class="container">
                     <profile-section></profile-section>
                     <value-section></value-section>
-                    <life-section></life-section>
+                    <timeline-section></timeline-section>
                     <skill-section></skill-section>
                 </div>
                 <my-footer></my-footer>
