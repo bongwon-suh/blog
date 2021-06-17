@@ -2,17 +2,16 @@ import { css } from 'lit';
 export const lifeStyles = css`
 :host {
     width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizeing: border-box;
 }
 .life {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 3.125rem 0;
+    min-height: 100vh;
     width: 100%;
-    height: 50rem;
-    clip-path: polygon(0 0, 100% 6.25rem, 100% 100%, 0 calc(100% - 6.25rem));
-    background: #f6f6f6;
-    padding-bottom: 15.63rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .life-title {
     margin-top: 5rem;
@@ -26,6 +25,41 @@ export const lifeStyles = css`
 .life_img {
     width: 50rem;
 }
+.timeline {
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+.timeline ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.timeline ul li {
+    padding: 20px;
+    background-color: #1e1f22;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.timeline ul li:last-child{
+    margin-bottom: 0;
+}
+
+.timeline-content h1 {
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    line-height: 30px;
+    font-weight: 300;
+
+}
+
 @media screen and (min-width:768px) and (max-width: 1023px) {
     .life {
         padding-bottom: 120px;
@@ -38,14 +72,16 @@ export const lifeStyles = css`
     }
 }
 @media screen and (max-width:767px) {
-    .life {
-        height: 570px;
-        padding-bottom: 0;
+    .timeline ul li {
+        width: 50%;
+        margin-bottom: 50px;
+        position: relative;
     }
-    .life-title {
+    .timeline ul li:nth-child(odd) {
+        float: left;
     }
-    .life_img {
-        width: 340px;
+    .timeline ul li:nth-child(even) {
+        float: right;
     }
 }
 `;
