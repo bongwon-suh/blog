@@ -6,6 +6,7 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators';
 import { profileStyles } from './styles/profile'
+import { profileStarStyles } from './styles/stars';
 
 @customElement('profile-section')
 class ProfileSection extends LitElement {
@@ -14,7 +15,8 @@ class ProfileSection extends LitElement {
     }
 
     static styles = [
-        profileStyles
+        profileStyles,
+        profileStarStyles
     ];
     
     render() {
@@ -28,6 +30,9 @@ class ProfileSection extends LitElement {
             <div class="profile-image">
                 <img class="profile-image_img" src="/static/images/profile2.jpg">
             </div>
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
         </section>
         `
     }

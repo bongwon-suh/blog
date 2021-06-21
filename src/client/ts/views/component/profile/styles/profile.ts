@@ -9,7 +9,7 @@ export const profileStyles = css`
     width: 100%;
     background: #222222;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6.25rem));
-    padding: 6.25rem 0 9.375rem 0;
+    padding: 150px 0 300px 0;
 }
 .profile-text {
     display: flex;
