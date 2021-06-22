@@ -30,9 +30,6 @@ class ProfileSection extends LitElement {
             <div class="profile-image">
                 <img class="profile-image_img" src="/static/images/profile2.jpg">
             </div>
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
         </section>
         `
     }

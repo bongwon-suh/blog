@@ -48,6 +48,7 @@ export const profileStyles = css`
     border-radius: 3px;
     margin-bottom: -5rem;
 }
+
 @media screen and (min-width:768px) and (max-width: 1023px) {
     .profile {
     }
