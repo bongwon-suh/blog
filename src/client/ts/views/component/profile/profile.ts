@@ -14,6 +14,13 @@ class ProfileSection extends LitElement {
         super();
     }
 
+    scrollDown = (e: Event) =>{
+        const content = this.shadowRoot?.querySelector('.profile')
+        const height = content!.getBoundingClientRect().height
+        console.log(height)
+        window.scrollTo({  top: height, behavior: 'smooth',})
+    }
+
     static styles = [
         profileStyles,
         profileStarStyles
@@ -22,13 +29,12 @@ class ProfileSection extends LitElement {
     render() {
         return html`
         <section class="profile">
-            <div class="profile-text">
-                <span class="profile-text_title">Lorem 한글은 어떻게 나오나 is simply</span>
-                <span class="profile-text_subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</span>
-                <a class="profile-text_button" href="/projects">My Projects</a>
-            </div>
-            <div class="profile-image">
-                <img class="profile-image_img" src="/static/images/profile2.jpg">
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+            <div class="profile-title">
+                <div>Hello, I'm <span class="highlight">Bongwon</span>.</div>
+                <div>I'm junior backend developer.</div>
+                <div class="button" @click=${this.scrollDown}>View my work</div>
             </div>
         </section>
         `

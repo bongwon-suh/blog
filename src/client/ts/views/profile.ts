@@ -37,10 +37,9 @@ export default class Profile extends AbstractView {
      */
     render() {
         return html`
-
-                <my-navbar></my-navbar>
                 <div class="container">
                     <profile-section></profile-section>
+                    <my-navbar></my-navbar>
                     <value-section></value-section>
                     <timeline-section></timeline-section>
                     <skill-section></skill-section>

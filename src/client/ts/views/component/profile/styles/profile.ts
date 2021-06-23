@@ -2,106 +2,76 @@ import { css } from 'lit';
 export const profileStyles = css`
 :host {
     width: 100%;
+    overflow: hidden;
+    background: #060e1b;
+}
+.highlight {
+    color: #e31b6d;
 }
 .profile {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background: #222222;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6.25rem));
-    padding: 150px 0 300px 0;
-}
-.profile-text {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    margin-right: 2rem;
-}
-.profile-text_title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 1.25rem;
-}
-.profile-text_subtitle {
-    font-size: 1.75rem;
-    line-height: 42px;
-    width: 31.25rem;
-    color: #ABABAB;
-}
-.profile-text_button {
-    text-decoration: none;
-    color: white;
-    background: #4b6cc1;
-    width: fit-content;
-    font-size: 1.125rem;
-    padding: 0.625rem 1.25rem;
-    border-radius: 10px;
-    margin-top: 1.875rem;
-}
-.profile-image {
-    padding: 2.5rem;
-    background: #121316;
-    border-radius: 5px;
-}
-.profile-image_img {
-    width: 18.75rem;
-    border-radius: 3px;
-    margin-bottom: -5rem;
+    align-items: center;
+    justify-content: center;
 }
 
-@media screen and (min-width:768px) and (max-width: 1023px) {
-    .profile {
-    }
-    .profile-text {
-        margin-right: 1rem;
-        margin-left: 1.2rem;
-    }
-    .profile-text_title {
-        font-size: 1.5rem;
-    }
-    .profile-text_subtitle {
-        font-size: 1.2rem;
-        line-height: 30px;
-    }
-    .profile-text_button {
-        font-size: 1rem;
-    }
-    .profile-image {
-        padding: 2rem 2rem 3rem 2rem;
-        margin-right: 1rem;
-    }
-    .profile-image_img {
-        width: 10rem;
-    }
+.profile-title {
+    color: white;
+    font-size: 45px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 70px;
 }
-@media screen and (max-width:767px) { 
-    .profile {
-        flex-direction: column-reverse;
-        align-items: center;
-        padding: 0 0px 9.375rem;
-    }
-    .profile-text {
-        align-items: center;
-        margin-top: 4rem;
-        margin-right: 0;
-        text-align: center;
-    }
-    .profile-text_title {
-        width: 100vw;
-        font-size: 1.5rem;
-        line-height: 36px;
-    }
-    .profile-text_subtitle {
-        width: 100vw;
-        font-size: 1.25rem;
-        line-height: 28px;
-    }
-    .profile-text_button {
-    }
-    .profile-image {
-    }
-    .profile-image_img {
-        width: 16em;
-    }
+
+.button {
+    border: 2px solid rgb(255, 255, 255);
+    box-sizing: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px 20px;
+    transition: all 0.5s ease 0s;
+    line-height: 45px;
+    margin-top: 30px;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+}
+
+/******* Background Effcet *******/
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+}
+
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  animation:move-twink-back 200s linear infinite;
 }
 `;
