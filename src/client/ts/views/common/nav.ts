@@ -7,10 +7,32 @@ import { User } from '../../lib/interfaces';
 @customElement('my-navbar')
 class Navbar extends LitElement {
     protected user: any
+    protected navbar: any
+    protected sticky: any
 
     constructor() {
         super();
     }
+
+    connectedCallback() {
+        super.connectedCallback();
+        window.addEventListener('scroll', this._handleResize);
+    }
+
+    protected setProperties = () => {
+        this.navbar = this.shadowRoot?.querySelector("nav")!
+        this.sticky = this.navbar.offsetTop;
+    }
+
+    protected _handleResize = () =>{
+        console.log(window.pageYOffset, this.sticky)
+        if (window.pageYOffset >= this.sticky) {
+            this.navbar.classList.add("sticky")
+          } else {
+            this.navbar.classList.remove("sticky");
+        }
+    }
+
 
     protected getUserInfo(): Promise<User> {
         return new Promise ((resolve, reject)=>{
@@ -31,10 +53,12 @@ class Navbar extends LitElement {
     static styles = css`
         .nav {
             display: flex;
-            justify-content: flex-end;
-            width: 100%;
-            background: #222222;
-            box-shadow: 0 0 1rem rgba(0,0,0,.1);
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 72px;
+            background: rgb(34, 34, 34);
+            box-shadow: rgb(0 0 0 / 10%) 0px 0px 1rem;
         }
         .nav__link {
             padding: 20px 15px 10px 15px;
@@ -47,6 +71,12 @@ class Navbar extends LitElement {
         .nav__link:hover{
             background: rgba(255, 255, 255, 0.05);
         }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+          }
     `;
 
     render() {

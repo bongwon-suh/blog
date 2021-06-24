@@ -2,7 +2,8 @@
 import { css } from 'lit';
 export const skillStyles = css`
 :host {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 .section {
     display: flex;

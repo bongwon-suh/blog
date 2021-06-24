@@ -21,7 +21,7 @@ class ValueSection extends LitElement {
         return html`
             <section class="section">
                 <div class="section-title">
-                    <p>SKILLS</p>
+                    <p>About</p>
                 </div>
                 <div class="skill-content">
                     <div class="skill-content-image">
