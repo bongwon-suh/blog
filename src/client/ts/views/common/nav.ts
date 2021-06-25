@@ -7,32 +7,10 @@ import { User } from '../../lib/interfaces';
 @customElement('my-navbar')
 class Navbar extends LitElement {
     protected user: any
-    protected navbar: any
-    protected sticky: any
-
+    
     constructor() {
         super();
     }
-
-    connectedCallback() {
-        super.connectedCallback();
-        window.addEventListener('scroll', this._handleResize);
-    }
-
-    protected setProperties = () => {
-        this.navbar = this.shadowRoot?.querySelector("nav")!
-        this.sticky = this.navbar.offsetTop;
-    }
-
-    protected _handleResize = () =>{
-        console.log(window.pageYOffset, this.sticky)
-        if (window.pageYOffset >= this.sticky) {
-            this.navbar.classList.add("sticky")
-          } else {
-            this.navbar.classList.remove("sticky");
-        }
-    }
-
 
     protected getUserInfo(): Promise<User> {
         return new Promise ((resolve, reject)=>{
@@ -71,12 +49,6 @@ class Navbar extends LitElement {
         .nav__link:hover{
             background: rgba(255, 255, 255, 0.05);
         }
-
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-          }
     `;
 
     render() {

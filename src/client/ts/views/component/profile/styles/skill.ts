@@ -3,7 +3,6 @@ import { css } from 'lit';
 export const skillStyles = css`
 :host {
     width: 100vw;
-    height: 100vh;
 }
 .section {
     display: flex;
@@ -18,6 +17,34 @@ export const skillStyles = css`
     letter-spacing: .063em;
     width: 18.75rem;
     text-align: center;
+}
+.values-content {
+    display: flex;
+    justify-content: space-between;
+}
+.core {
+    background: #f6f6f6;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    height: 12.5rem;
+    width: 12.5rem;
+    text-align: center;
+    margin: 4rem;
+}
+
+.about-wrap {
+    display: flex;
+    align-items: center;
+}
+.about-profile {
+    margin-right: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.profile-img {
+    width: 300px;
+    border-radius: 20px;
 }
 .skill-content {
     display: flex;

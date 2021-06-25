@@ -41,8 +41,8 @@ export default class Profile extends AbstractView {
                     <profile-section></profile-section>
                     <my-navbar></my-navbar>
                     <skill-section></skill-section>
-                    <value-section></value-section>
                     <timeline-section></timeline-section>
+                    <value-section></value-section>
                 </div>
                 <my-footer></my-footer>
                 `
