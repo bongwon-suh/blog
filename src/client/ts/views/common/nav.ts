@@ -44,7 +44,7 @@ class Navbar extends LitElement {
             font-weight: 500;
             font-size: 1.2rem;
             text-decoration: none;
-            margin-rigth: 15px;
+            margin: 15px;
         }
         .nav__link:hover{
             background: rgba(255, 255, 255, 0.05);

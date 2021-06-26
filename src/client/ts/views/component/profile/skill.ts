@@ -11,6 +11,17 @@ import { skillStyles } from './styles/skill'
 class ValueSection extends LitElement {
     constructor() {
         super();
+        window.onscroll = () =>{
+            const container = this.shadowRoot?.querySelector(".about-profile")
+            const image = this.shadowRoot?.querySelector(".profile-img")
+            const skill = this.shadowRoot?.querySelector(".about-skills")
+            console.log(container?.getBoundingClientRect().top!)
+            console.log(container?.getBoundingClientRect().top!+300)
+            if (window.pageYOffset > container?.getBoundingClientRect().top!-300) {
+                skill?.classList.remove("none")
+                image?.classList.remove("none")
+            }
+        }
     }
 
     static styles = [
@@ -29,14 +40,14 @@ class ValueSection extends LitElement {
                     <div class="core">Lorem</div>
                 </div>
                 <div class="about-wrap">
-                    <div class="about-profile">
-                        <img class="profile-img" src="/static/images/profile2.jpg">
-                        <div class="profile-text">
+                    <div class="about-profile" data-animation="slide-in-left">
+                        <img class="none profile-img slide-left" src="/static/images/profile2.jpg">
+                        <div class="none profile-text">
                             <p>I'm a junior backend developer in South Korea</p>
                             <p>I'm a junior backend developer in South Korea</p>
                         </div>
                     </div>
-                    <div class="about-skills">
+                    <div class="none about-skills slide-right" data-animation="slide-in-right">
                         <div class="skill-content">
                             <div class="skill-content-image">
                                 <img class="skill-content_img" src="/static/images/typescript.png">

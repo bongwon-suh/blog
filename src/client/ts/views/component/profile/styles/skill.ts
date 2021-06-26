@@ -3,6 +3,7 @@ import { css } from 'lit';
 export const skillStyles = css`
 :host {
     width: 100vw;
+    height: 80vh;
 }
 .section {
     display: flex;
@@ -23,13 +24,13 @@ export const skillStyles = css`
     justify-content: space-between;
 }
 .core {
-    background: #f6f6f6;
+    background: rgb(246, 246, 246);
     border-radius: 50%;
     font-size: 1.5rem;
-    height: 12.5rem;
-    width: 12.5rem;
+    height: 150px;
+    width: 150px;
     text-align: center;
-    margin: 4rem;
+    margin: 75px 120px 100px 120px;
 }
 
 .about-wrap {
@@ -37,14 +38,25 @@ export const skillStyles = css`
     align-items: center;
 }
 .about-profile {
-    margin-right: 30px;
+    margin-right: 75px;
     align-items: center;
     display: flex;
-    flex-direction: column;
+}
+.none {
+    display: none;
 }
 .profile-img {
-    width: 300px;
+    width: 250px;
     border-radius: 20px;
+}
+.slide-left {
+    animation: slideInLeft 0.75s ease both;
+}
+.slide-right {
+    animation: slideInRight 0.75s ease both;
+}
+.about-skills {
+
 }
 .skill-content {
     display: flex;
@@ -52,11 +64,12 @@ export const skillStyles = css`
     justify-content: center;
 }
 .skill-content-image {
-    width: 12.5rem;
-    margin: 1.875rem 4.688rem 1.875rem 0;
+    width: 165px;
+    margin: 30px 10px 30px 10px;
+    text-align: center;
 }
 .skill-content_img {
-    width: 3.75rem;
+    width: 50px;
 }
 .skill-content-descripition {
     width: 31.25rem;
@@ -65,6 +78,29 @@ export const skillStyles = css`
 .skill-content_text {
     width: 31.25rem;
 }
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media screen and (min-width:768px) and (max-width: 1023px) {
     .section {
         margin: 0 0 3rem 0;
