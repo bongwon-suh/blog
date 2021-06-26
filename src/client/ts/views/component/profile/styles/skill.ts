@@ -2,8 +2,7 @@
 import { css } from 'lit';
 export const skillStyles = css`
 :host {
-    width: 100vw;
-    height: 80vh;
+    height: 1000px;
 }
 .section {
     display: flex;
@@ -79,6 +78,10 @@ export const skillStyles = css`
     width: 31.25rem;
 }
 
+.flip-in-x {
+    animation: flipInX 0.75s ease both;
+}
+
 @keyframes slideInLeft {
     0% {
         opacity: 0;
@@ -98,6 +101,40 @@ export const skillStyles = css`
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes flipInX {
+    0% {
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+        -webkit-transform: perspective(400px) rotateY(90deg);
+        transform: perspective(400px) rotateY(90deg);
+    }
+
+    40% {
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        -webkit-transform: perspective(400px) rotateY(-20deg);
+        transform: perspective(400px) rotateY(-20deg);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: perspective(400px) rotateY(10deg);
+        transform: perspective(400px) rotateY(10deg);
+    }
+
+    80% {
+        -webkit-transform: perspective(400px) rotateY(-5deg);
+        transform: perspective(400px) rotateY(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
     }
 }
 

@@ -1,7 +1,6 @@
 import { css } from 'lit';
 export const profileStyles = css`
 :host {
-    width: 100%;
     overflow: hidden;
     background: #060e1b;
 }
@@ -56,12 +55,8 @@ export const profileStyles = css`
 }
 
 .stars, .twinkling {
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  width:100vw;
+  position: absolute;
+  width:100%;
   height:100vh;
   display:block;
 }

@@ -21,6 +21,15 @@ class ValueSection extends LitElement {
                 skill?.classList.remove("none")
                 image?.classList.remove("none")
             }
+
+            const value_container = this.shadowRoot?.querySelector(".values-content")
+            const core = this.shadowRoot?.querySelectorAll(".core")
+            console.log(core)
+            if (window.pageYOffset > value_container?.getBoundingClientRect().top!-300) {
+                core?.forEach(item => {
+                    item.classList.remove("none")
+                })
+            }
         }
     }
 
@@ -35,9 +44,9 @@ class ValueSection extends LitElement {
                     <p>About</p>
                 </div>
                 <div class="values-content">
-                    <div class="core"><p>Lorem</p></div>
-                    <div class="core">Lorem</div>
-                    <div class="core">Lorem</div>
+                    <div class="none core flip-in-x" data-animation="flip-in-x"><p>Lorem</p></div>
+                    <div class="none core flip-in-x" data-animation="flip-in-x" data-delay=".2s" style="animation-delay: 0.2s;"><p>Lorem</p></div>
+                    <div class="none core flip-in-x" data-animation="flip-in-x" data-delay=".4s" style="animation-delay: 0.4s;"><p>Lorem</p></div>
                 </div>
                 <div class="about-wrap">
                     <div class="about-profile" data-animation="slide-in-left">

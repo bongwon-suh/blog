@@ -29,25 +29,28 @@ class Navbar extends LitElement {
     }
 
     static styles = css`
-        .nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 72px;
+    :host {
+        width: 100%;
+    }    
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
             background: rgb(34, 34, 34);
             box-shadow: rgb(0 0 0 / 10%) 0px 0px 1rem;
+            height: 70px;
         }
         .nav__link {
-            padding: 20px 15px 10px 15px;
-            color: #eeeeee;
+            color: rgb(238, 238, 238);
             font-weight: 500;
             font-size: 1.2rem;
             text-decoration: none;
-            margin: 15px;
+            padding: 10px 20px;
+            margin: 10px;
         }
         .nav__link:hover{
-            background: rgba(255, 255, 255, 0.05);
+            border-bottom: #4b6cc1 4px solid;
+            margin-bottom: 5px;
         }
     `;
 
