@@ -2,7 +2,27 @@
 import { css } from 'lit';
 export const skillStyles = css`
 :host {
-    height: 1000px;
+    height: 1250px;
+}
+
+.highlight {
+    color: #e31b6d;
+}
+
+.none {
+    display: none;
+}
+
+.flip-in-x {
+    animation: flipInX 0.75s ease both;
+}
+
+.slide-left {
+    animation: slideInLeft 0.75s ease both;
+}
+
+.slide-right {
+    animation: slideInRight 0.75s ease both;
 }
 .section {
     display: flex;
@@ -10,6 +30,7 @@ export const skillStyles = css`
     align-items: center;
     margin: 3.125rem 0;
 }
+
 .section-title {
     font-size: 36px;
     color: #919191;
@@ -18,17 +39,21 @@ export const skillStyles = css`
     width: 18.75rem;
     text-align: center;
 }
+
 .values-content {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
+    align-items: flex-start;
+    margin-bottom: 70px;
 }
+
 .core-value {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 25px;
 }
+
 .core-value_icon {
     display: flex;
     align-items: center;
@@ -40,8 +65,13 @@ export const skillStyles = css`
     height: 120px;
     width: 120px;
     text-align: center;
-    margin: 75px 80px 10px 80px;
+    margin: 50px 80px 10px 80px;
 }
+
+.core-value-text {
+    text-align: center;
+}
+
 .core-value-text_title {
     font-size: 22px;
     font-weight: bold;
@@ -51,85 +81,58 @@ export const skillStyles = css`
     display: flex;
     align-items: center;
 }
+
 .about-profile {
-    margin-right: 75px;
+    margin-right: 100px;
     align-items: center;
     display: flex;
+    flex-direction: column;
 }
-.none {
-    display: none;
-}
-.profile-img {
-    width: 250px;
-    border-radius: 20px;
-}
-.slide-left {
-    animation: slideInLeft 0.75s ease both;
-}
-.slide-right {
-    animation: slideInRight 0.75s ease both;
-}
-.about-skills {
 
+.profile-image {
+    padding: 5px;
+    background: #04C2C9;
+    border-radius: 10px;
 }
+
+.profile_img {
+    width: 320px;
+    border-radius: 10px;
+}
+
+.profile-text {
+    text-align: center;
+}
+
+.profile-text_title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
 .skill-content {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 25px 0;
 }
+
 .skill-content-image {
     width: 165px;
-    margin: 30px 10px 30px 10px;
+    margin: 30px 50px 30px 10px;
     text-align: center;
 }
+
 .skill-content_img {
     width: 50px;
 }
+
 .skill-content-descripition {
-    width: 31.25rem;
     margin-left: 1.875rem 0 1.875rem; 4.688rem;
 }
+
 .skill-content_text {
-    width: 31.25rem;
+    width: 600px;
 }
-
-.flip-in-x {
-    animation: flipInX 0.75s ease both;
-}
-
-.hex-wrap {
-    display: inline-block;
-    height: 80px;
-    position: relative;
-    text-align: center;
-    width: 80px;
-}
-.hexagon {
-    background-color: #04c2c9;
-    display: inline-block;
-    height: 100%;
-    width: calc(100% * 0.57735);
-}
-.hexagon::before {
-    background-color: inherit;
-    content: "";
-    height: inherit;
-    position: absolute;
-    right: calc((100% / 2) - ((100% * 0.57735) / 2));
-    top: 0;
-    transform: rotateZ(60deg);
-    width: inherit;
-}
-  .hexagon::after {
-    background-color: inherit;
-    content: "";
-    height: inherit;
-    position: absolute;
-    right: calc((100% / 2) - ((100% * 0.57735) / 2));
-    top: 0;
-    transform: rotateZ(-60deg);
-    width: inherit;
-  }
 
 @keyframes slideInLeft {
     0% {
