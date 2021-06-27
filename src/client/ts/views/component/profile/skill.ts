@@ -23,7 +23,7 @@ class ValueSection extends LitElement {
             }
 
             const value_container = this.shadowRoot?.querySelector(".values-content")
-            const core = this.shadowRoot?.querySelectorAll(".core")
+            const core = this.shadowRoot?.querySelectorAll(".core-value")
             console.log(core)
             if (window.pageYOffset > value_container?.getBoundingClientRect().top!-300) {
                 core?.forEach(item => {
@@ -39,14 +39,51 @@ class ValueSection extends LitElement {
     
     render() {
         return html`
+        <link rel="stylesheet"
+                        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+                        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+                        crossorigin="anonymous"/>
             <section class="section">
                 <div class="section-title">
                     <p>About</p>
                 </div>
                 <div class="values-content">
-                    <div class="none core flip-in-x" data-animation="flip-in-x"><p>Lorem</p></div>
-                    <div class="none core flip-in-x" data-animation="flip-in-x" data-delay=".2s" style="animation-delay: 0.2s;"><p>Lorem</p></div>
-                    <div class="none core flip-in-x" data-animation="flip-in-x" data-delay=".4s" style="animation-delay: 0.4s;"><p>Lorem</p></div>
+                    <div class="none core-value flip-in-x" data-animation="flip-in-x">
+                        <div class="core-value_icon">
+                            <i class="far fa-comments"></i>
+                        </div>
+                        <div class="core-value-text">
+                            <p class="core-value-text_title">소통</p>
+                            <p class="core-value-text_content">내용</p>
+                        </div>
+                    </div>
+                    <div class="none core-value flip-in-x"  data-animation="flip-in-x" data-delay=".2s" style="animation-delay: 0.2s;">
+                        <div class="core-value_icon">
+                            <i class="fas fa-assistive-listening-systems"></i>
+                        </div>
+                        <div class="core-value-text">
+                            <p class="core-value-text_title">경청</p>
+                            <p class="core-value-text_content">내용</p>
+                        </div>
+                    </div>
+                    <div class="none core-value flip-in-x" data-animation="flip-in-x" data-delay=".4s" style="animation-delay: 0.4s;">
+                        <div class="core-value_icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="core-value-text">
+                            <p class="core-value-text_title">물음표</p>
+                            <p class="core-value-text_content">내용</p>
+                        </div>
+                    </div>
+                    <div class="none core-value flip-in-x" data-animation="flip-in-x" data-delay=".6s" style="animation-delay: 0.6s;">
+                        <div class="core-value_icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="core-value-text">
+                            <p class="core-value-text_title">큰그림</p>
+                            <p class="core-value-text_content">내용</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-wrap">
                     <div class="about-profile" data-animation="slide-in-left">

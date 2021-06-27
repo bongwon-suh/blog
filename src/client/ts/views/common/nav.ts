@@ -39,6 +39,7 @@ class Navbar extends LitElement {
             background: rgb(34, 34, 34);
             box-shadow: rgb(0 0 0 / 10%) 0px 0px 1rem;
             height: 70px;
+            border-bottom: #04C2C9 4px solid;
         }
         .nav__link {
             color: rgb(238, 238, 238);
@@ -49,7 +50,7 @@ class Navbar extends LitElement {
             margin: 10px;
         }
         .nav__link:hover{
-            border-bottom: #4b6cc1 4px solid;
+            border-bottom: #04C2C9 4px solid;
             margin-bottom: 5px;
         }
     `;

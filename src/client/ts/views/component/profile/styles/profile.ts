@@ -38,10 +38,8 @@ export const profileStyles = css`
 }
 
 .button:hover {
-    background: white;
-    color: black;
+    background: #04C2C9;
 }
-
 /******* Background Effcet *******/
 
 @keyframes move-twink-back {

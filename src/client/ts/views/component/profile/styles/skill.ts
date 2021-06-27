@@ -11,7 +11,7 @@ export const skillStyles = css`
     margin: 3.125rem 0;
 }
 .section-title {
-    font-size: 1.5rem;
+    font-size: 36px;
     color: #919191;
     font-weight: 600;
     letter-spacing: .063em;
@@ -21,15 +21,30 @@ export const skillStyles = css`
 .values-content {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
 }
-.core {
-    background: rgb(246, 246, 246);
+.core-value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.core-value_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+    background: #04C2C9;
     border-radius: 50%;
-    font-size: 1.5rem;
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     text-align: center;
-    margin: 75px 120px 100px 120px;
+    margin: 75px 80px 10px 80px;
+}
+.core-value-text_title {
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .about-wrap {
@@ -81,6 +96,40 @@ export const skillStyles = css`
 .flip-in-x {
     animation: flipInX 0.75s ease both;
 }
+
+.hex-wrap {
+    display: inline-block;
+    height: 80px;
+    position: relative;
+    text-align: center;
+    width: 80px;
+}
+.hexagon {
+    background-color: #04c2c9;
+    display: inline-block;
+    height: 100%;
+    width: calc(100% * 0.57735);
+}
+.hexagon::before {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    position: absolute;
+    right: calc((100% / 2) - ((100% * 0.57735) / 2));
+    top: 0;
+    transform: rotateZ(60deg);
+    width: inherit;
+}
+  .hexagon::after {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    position: absolute;
+    right: calc((100% / 2) - ((100% * 0.57735) / 2));
+    top: 0;
+    transform: rotateZ(-60deg);
+    width: inherit;
+  }
 
 @keyframes slideInLeft {
     0% {
