@@ -19,6 +19,10 @@ export default class Profile extends AbstractView {
     constructor() {
         super();
         this.setTitle("Profile");
+        // window.onscroll = () => {
+        //     console.log(this.shadowRoot!.querySelector('timeline-section::shadow .timeline'))
+        //     const myCarousel = this.host.shadowRoot.querySelector(#myCarousel);
+        // }
     }
 
     /**

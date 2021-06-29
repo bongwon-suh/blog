@@ -11,26 +11,23 @@ import { skillStyles } from './styles/skill'
 class ValueSection extends LitElement {
     constructor() {
         super();
-        window.onscroll = () =>{
+        window.addEventListener('scroll', ()=>{
             const container = this.shadowRoot?.querySelector(".about-wrap")
             const profile = this.shadowRoot?.querySelector(".about-profile")
             const skill = this.shadowRoot?.querySelector(".about-skills")
-            console.log(container?.getBoundingClientRect().top!)
-            console.log(container?.getBoundingClientRect().top!+300)
-            if (window.pageYOffset > container?.getBoundingClientRect().top!-300) {
+            if (window.pageYOffset > container?.getBoundingClientRect().top!-200) {
                 skill?.classList.remove("none")
                 profile?.classList.remove("none")
             }
 
             const value_container = this.shadowRoot?.querySelector(".values-content")
             const core = this.shadowRoot?.querySelectorAll(".core-value")
-            console.log(core)
-            if (window.pageYOffset > value_container?.getBoundingClientRect().top!-300) {
+            if (window.innerHeight > value_container?.getBoundingClientRect().top!+200) {
                 core?.forEach(item => {
                     item.classList.remove("none")
                 })
             }
-        }
+        })
     }
 
     static styles = [

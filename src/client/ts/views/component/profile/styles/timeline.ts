@@ -3,6 +3,22 @@ export const timelineStyles = css`
 :host {
     width: 100%;
 }
+.none {
+    display: none;
+}
+
+.flip-in-x {
+    animation: flipInX 0.75s ease both;
+}
+
+.slide-left {
+    animation: slideInLeft 0.75s ease both;
+}
+
+.slide-right {
+    animation: slideInRight 0.75s ease both;
+}
+
 .timeline {
     display: flex;
     flex-direction: column;
@@ -148,6 +164,28 @@ export const timelineStyles = css`
 
 .row section .bottom a:hover {
     transform: scale(0.97);
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @media screen and (min-width:768px) and (max-width: 1023px) {

@@ -47,7 +47,6 @@ export const skillStyles = css`
 }
 
 .core-value {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -84,9 +83,6 @@ export const skillStyles = css`
 
 .about-profile {
     margin-right: 100px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
 }
 
 .profile-image {
