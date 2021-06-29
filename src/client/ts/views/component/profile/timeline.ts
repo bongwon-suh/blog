@@ -37,10 +37,10 @@ class ProfileSection extends LitElement {
                         <section class="none slide-left" data-animation="slide-in-left">
                             <i class="icon"></i>
                             <div class="details">
-                                <span class="title">Title of Section1</span>
-                                <span>1st Jan 2021</span>
+                                <span class="title">한국폴리텍 2대학 컴퓨터정보과 입학</span>
+                                <span>Mar 2013</span>
                             </div>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                            <p></p>
                             <div class="bottom">
                                 <a href="#">Read more</a>
                                 <i>- someone famous</i>
