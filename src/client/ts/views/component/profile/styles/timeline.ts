@@ -20,6 +20,7 @@ export const timelineStyles = css`
 }
 
 .timeline {
+    height: 2300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,8 +148,19 @@ export const timelineStyles = css`
     font-weight: 600;
 }
 
+.row section .content {
+    display: flex;
+    align-items: center;
+}
+
+.row section img {
+    margin: 10px 15px 17px 0;
+    border-radius: 10px;
+}
+
 .row section p {
     margin: 10px 0 17px 0;
+    line-height: 25px;
 }
 
 .row section .bottom a {
