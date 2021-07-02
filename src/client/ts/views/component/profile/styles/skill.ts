@@ -44,6 +44,7 @@ export const skillStyles = css`
     display: flex;
     align-items: flex-start;
     margin-bottom: 70px;
+    height: 350px;
 }
 
 .core-value {
@@ -79,6 +80,7 @@ export const skillStyles = css`
 .about-wrap {
     display: flex;
     align-items: center;
+    height: 575px;
 }
 
 .about-profile {

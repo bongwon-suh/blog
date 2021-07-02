@@ -159,7 +159,7 @@ export const timelineStyles = css`
 }
 
 .row section p {
-    margin: 10px 0 17px 0;
+    margin-top: 10px;
     line-height: 25px;
 }
 
