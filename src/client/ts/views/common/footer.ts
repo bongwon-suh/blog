@@ -38,6 +38,10 @@ class Footer extends LitElement {
         display: flex;
         align-items: center;
     }
+    .contact-info-item a {
+        text-decoration: none;
+        color: white;
+    }
     .icon {
         margin-right: 10px;
         color: #4b6cc1;
@@ -57,15 +61,15 @@ class Footer extends LitElement {
                         <div class="contact-info">
                             <div class="contact-info-item">
                                 <i class="fas fa-envelope icon"></i>
-                                <p>abcd@gmail.com</p>
+                                <p>suhliebe@gmail.com</p>
                             </div>
                             <div class="contact-info-item">
                                 <i class="fas fa-mobile-alt icon"></i>
-                                <p>(+82)10 1234 5678</p>
+                                <p>(+82)10-2016-9782</p>
                             </div>
                             <div class="contact-info-item">
                                 <i class="fab fa-github icon"></i>
-                                <p>github</p>
+                                <a href="https://www.github.com/bongwon-suh">Github</a>
                             </div>
                         </div>
                     </section>
