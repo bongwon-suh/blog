@@ -22,8 +22,13 @@ export const projectDetailStyles = css`
 }
 .top-text_subtitle {
     font-size: 28px;
-    width: 500px;
+    width: 1000px;
     color: #ABABAB;
     line-height: initial;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 `
