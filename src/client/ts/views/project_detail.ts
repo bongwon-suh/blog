@@ -68,6 +68,8 @@ export default class ProjectDetail extends AbstractView {
                         <div class="top-text">
                             <span class="top-text_title">${this.items.title}</span>
                             <span class="top-text_subtitle">${this.items.description}</span>
+                            <span class="top-text_subtitle">개발 기간 : ${this.items.dev_period}</span>
+                            <span class="top-text_subtitle">개발 도구 : ${this.items.dev_tool}</span>
                         </div>
                     </section>
                     <section class="body">
