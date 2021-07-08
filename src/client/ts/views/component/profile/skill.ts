@@ -15,17 +15,42 @@ class ValueSection extends LitElement {
             const container = this.shadowRoot?.querySelector(".about-wrap")
             const profile = this.shadowRoot?.querySelector(".about-profile")
             const skill = this.shadowRoot?.querySelector(".about-skills")
-            if (window.pageYOffset > container?.getBoundingClientRect().top!-200) {
-                skill?.classList.remove("none")
-                profile?.classList.remove("none")
-            }
+            // if (window.pageYOffset > container?.getBoundingClientRect().top!-200) {
+            //     skill?.classList.remove("none")
+            //     profile?.classList.remove("none")
+            // }
 
-            const value_container = this.shadowRoot?.querySelector(".values-content")
+            // const value_container = this.shadowRoot?.querySelector(".values-content")
             const core = this.shadowRoot?.querySelectorAll(".core-value")
-            if (window.innerHeight > value_container?.getBoundingClientRect().top!+200) {
+            // if (window.innerHeight > value_container?.getBoundingClientRect().top!+200) {
+            //     core?.forEach(item => {
+            //         item.classList.remove("none")
+            //     })
+            // }
+
+            /* *************** TEST ******* */
+            const test = this.shadowRoot!.querySelector(".values-content")
+            const rect = test?.getBoundingClientRect();
+            var elemTop = rect!.top;
+            var elemBottom = rect!.bottom;
+            var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+            
+            // Only completely visible elements return true:
+            console.log(isVisible);        
+            if (isVisible) {
                 core?.forEach(item => {
                     item.classList.remove("none")
                 })
+            }
+
+            const test2 = this.shadowRoot?.querySelector(".about-wrap")
+            const rect2 = test2?.getBoundingClientRect();
+            var elemTop2 = rect2!.top;
+            var elemBottom2 = rect2!.bottom;
+            var isVisible2 = (elemTop2 >= 0) && (elemBottom2 <= window.innerHeight);
+            if (isVisible2) {
+                skill?.classList.remove("none")
+                profile?.classList.remove("none")
             }
         })
     }
