@@ -63,7 +63,7 @@ export const projectStyles = css`
     word-break: break-word;
 }
 .card-content {
-    font-size: 1.5rem;
+    font-size: 36px;
     color: #495057;
     margin: 10px;
     line-height: 2.2rem;
